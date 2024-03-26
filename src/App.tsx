@@ -1,6 +1,24 @@
+import { useEffect, useState } from "react";
 import "./App.css";
 
+// function setMove() {
+//     const timeout = setTimeout(() => )
+// }
+
+// function getRandWord(current: number) {
+//     const randIndex = Math.floor(Math.random() * 5);
+//     if (randIndex == current) {
+//         return
+//     }
+// }
+
 function App() {
+    const whyArr = ["PROUD", "STRONG", "COOL", "MYSELF", "COMFY"];
+    const [moveText, setText] = useState("PROUD");
+    function triggerMove() {
+        const randomIndex = Math.floor(Math.random() * whyArr.length);
+        setText(whyArr[randomIndex]);
+    }
     return (
         <div>
             <nav className="header">
@@ -19,7 +37,17 @@ function App() {
                 </ul>
             </nav>
             <section id="hero-section">
-                <div id="text-div">{/* <h1>Be Proud <br /> Be You</h1> */}</div>
+                <div id="text-div">
+                    <div id="first-text">I wear piercings to be</div>
+                    <div id="moving-text">
+                        <p
+                            id="moving-p"
+                            onAnimationIteration={() => triggerMove()}
+                        >
+                            {moveText}
+                        </p>
+                    </div>
+                </div>
                 <div id="img-div">
                     <img
                         id="hero-img"

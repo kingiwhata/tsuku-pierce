@@ -31,14 +31,17 @@ nav {
     /* border: 2px solid white; */
     height: calc(100% - 4rem);
     width: 50%;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 5rem;
 }
 
 #logo-div {
     justify-self: flex-start;
     margin-right: auto;
-}
-
-img {
 }
 
 #hero-img {
@@ -47,15 +50,15 @@ img {
     width: 110%;
     height: 110%;
     object-fit: cover;
+    animation: slide 15s ease forwards, fade-in 3s;
 }
 
 #img-div {
+    z-index: -1;
     position: absolute;
     /* border: 2px solid white; */
     height: calc(100% - 4rem);
     width: 75%;
-    animation-name: slide;
-    animation: slide 15s ease forwards, fade-in 3s;
 }
 
 #hero-section {
@@ -65,13 +68,49 @@ img {
     display: flex;
 }
 
+#first-text {
+    color: black;
+    font-size: 2rem;
+}
+
+#moving-p {
+    position: absolute;
+    animation: move 2s ease-out infinite;
+    animation-delay: 15s;
+}
+
+#moving-text {
+    position: relative;
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    width: 70%;
+    height: 8.5rem;
+    border: 4px solid black;
+    font-weight: bold;
+    font-size: 7rem;
+    font-family: "Rock Salt", cursive;
+    padding-left: 2.5rem;
+    overflow-x: hidden;
+}
+
+@keyframes move {
+    from {
+        right: -8rem;
+    } 
+
+    to {
+        right: 8rem;
+    }
+}
+
 @keyframes slide {
     from {
-        right: 300px;
+        right: -900px;
     }
 
     to {
-        right: 450px;
+        right: -700px;
     }
 }
 
