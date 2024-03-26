@@ -6,7 +6,8 @@
 }
 
 body {
-    font-family: Noto Sans,Noto Sans CJK JP,Noto Sans CJK JP Subset,sans-serif;
+    font-family: Noto Sans, Noto Sans CJK JP, Noto Sans CJK JP Subset,
+        sans-serif;
 }
 
 .logo {
@@ -36,7 +37,7 @@ nav {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding-left: 5rem;
+    padding-left: 7rem;
 }
 
 #logo-div {
@@ -50,7 +51,7 @@ nav {
     width: 110%;
     height: 110%;
     object-fit: cover;
-    animation: slide 15s ease forwards, fade-in 3s;
+    animation: slide 12s ease-in-out forwards, fade-in 3s;
 }
 
 #img-div {
@@ -75,7 +76,7 @@ nav {
 
 #moving-p {
     position: absolute;
-    animation: move 2s ease-out infinite;
+    animation: move 2s ease-out forwards infinite;
     animation-delay: 15s;
 }
 
@@ -94,10 +95,15 @@ nav {
     overflow-x: clip;
 }
 
+.nav-icons {
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
 @keyframes move {
     from {
         right: -8rem;
-    } 
+    }
 
     to {
         right: 8rem;
@@ -110,13 +116,13 @@ nav {
     }
 
     to {
-        right: -700px;
+        right: -750px;
     }
 }
 
 @keyframes fade-in {
     from {
-        opacity: 0
+        opacity: 0;
     }
 
     to {

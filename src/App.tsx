@@ -1,16 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
-
-// function setMove() {
-//     const timeout = setTimeout(() => )
-// }
-
-// function getRandWord(current: number) {
-//     const randIndex = Math.floor(Math.random() * 5);
-//     if (randIndex == current) {
-//         return
-//     }
-// }
+import cart from "./assets/pierce-cart.svg";
+import search from "./assets/pierce-search.svg";
 
 function App() {
     const whyArr = [
@@ -45,15 +36,15 @@ function App() {
             <nav className="header">
                 <ul>
                     <li id="logo-div">
-                        <h2 id="logo-temp">Proud to Pierce</h2>
+                        <p id="logo-temp">Proud to Pierce</p>
                     </li>
-                    <li>About</li>
-                    <li>Products</li>
+                    {/* <li>About</li> */}
+                    {/* <li>Products</li> */}
                     <li>
-                        <img src="https://d2w53g1q050m78.cloudfront.net/koredakecojp/uploads/images/icon-user.svg" />
+                        <img className="nav-icons" src={cart} />
                     </li>
                     <li>
-                        <img src="https://d2w53g1q050m78.cloudfront.net/koredakecojp/uploads/images/icon-cart.svg" />
+                        <img  className="nav-icons" src={search} />
                     </li>
                 </ul>
             </nav>
