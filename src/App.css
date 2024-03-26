@@ -91,7 +91,7 @@ nav {
     font-size: 7rem;
     font-family: "Rock Salt", cursive;
     padding-left: 2.5rem;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 @keyframes move {

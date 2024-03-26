@@ -13,10 +13,31 @@ import "./App.css";
 // }
 
 function App() {
-    const whyArr = ["PROUD", "STRONG", "COOL", "MYSELF", "COMFY"];
+    const whyArr = [
+        "PROUD",
+        "STRONG",
+        "COOL",
+        "MYSELF",
+        "ACCEPTED",
+        "FREE",
+        "UNIQUE",
+        "HAPPY",
+        "BOLD",
+        "BRAVE",
+        "CONFIDENT",
+        "SEXY",
+        "FEARLESS",
+        "EXCITED",
+        "JOYFUL",
+    ];
     const [moveText, setText] = useState("PROUD");
     function triggerMove() {
         const randomIndex = Math.floor(Math.random() * whyArr.length);
+        const iCheck = whyArr.indexOf(moveText);
+        if (randomIndex == iCheck) {
+            setText(whyArr[randomIndex + 1] || whyArr[randomIndex - 1]);
+            return;
+        }
         setText(whyArr[randomIndex]);
     }
     return (
@@ -38,7 +59,7 @@ function App() {
             </nav>
             <section id="hero-section">
                 <div id="text-div">
-                    <div id="first-text">I wear piercings to be</div>
+                    <div id="first-text">Wearing piercings makes me</div>
                     <div id="moving-text">
                         <p
                             id="moving-p"
