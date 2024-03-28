@@ -50,7 +50,7 @@ function App() {
             </nav>
             <section id="hero-section">
                 <div id="text-div">
-                    <div id="first-text">Wearing piercings makes me</div>
+                    <div id="first-text">Wearing <span style={{color: "black"}}>piercings </span>makes me</div>
                     <div id="moving-text">
                         <p
                             id="moving-p"
