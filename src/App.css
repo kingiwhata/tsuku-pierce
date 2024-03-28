@@ -88,11 +88,12 @@ nav {
     font-size: 2.5rem;
     letter-spacing: -0.01rem;
 }
-
 #moving-p {
     position: absolute;
-    animation: move 3s ease-out forwards infinite;
+    animation: move 8s ease-out infinite;
     animation-delay: 15s;
+    text-align: left;
+    width: 100%;
 }
 
 #moving-text {
@@ -100,13 +101,12 @@ nav {
     align-items: center;
     display: flex;
     justify-content: flex-start;
-    width: 70%;
-    height: 8.5rem;
+    width: 80%;
+    height: 6.5rem;
     border: 5.5px solid black;
     font-weight: bold;
-    font-size: 7.5rem;
+    font-size: 5.5rem;
     font-family: "Rock Salt", cursive;
-    padding-left: 2.5rem;
     overflow-x: clip;
 }
 
@@ -116,12 +116,16 @@ nav {
 }
 
 @keyframes move {
-    from {
-        right: -8rem;
+    0% {
+        transform: translate(600px, 0);
     }
 
-    to {
-        right: 8rem;
+    50% {
+        transform: translate(50px, 0);
+    }
+
+    100% {
+        transform: translate(-600px, 0);
     }
 }
 
