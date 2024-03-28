@@ -22,6 +22,7 @@ function App() {
         "JOYFUL",
     ];
     const [moveText, setText] = useState("PROUD");
+    const nextText = "JOYFUL";
     function triggerMove() {
         const randomIndex = Math.floor(Math.random() * whyArr.length);
         const iCheck = whyArr.indexOf(moveText);
