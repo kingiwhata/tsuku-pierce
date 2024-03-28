@@ -50,6 +50,7 @@ function App() {
                     </ul>
                 </nav>
                 <div id="text-div">
+                    <div id="inner-text-div">
                     <div id="first-text">
                         Wearing{" "}
                         <span style={{ color: "black" }}>piercings </span>makes
@@ -63,6 +64,8 @@ function App() {
                             {moveText}
                         </p>
                     </div>
+                
+                    </div>
                 </div>
                 <div id="img-div">
                     <img
@@ -70,8 +73,16 @@ function App() {
                         src="src/assets/placeholder-removebg.png"
                     />
                 </div>
+                <div id="scroll-indicator">
+                    <p>Scroll</p>
+                    <div id="scroll-line"></div>
+                </div>
             </section>
-            <section id="about-section"></section>
+            <section id="about-section">
+                <div id="about-header">
+                    About Us
+                </div>
+            </section>
             <section id="shop-section"></section>
             <section id="insta-section"></section>
             <footer></footer>

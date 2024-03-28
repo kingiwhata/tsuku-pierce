@@ -11,23 +11,35 @@ body {
 }
 
 nav {
-    /* background-color: #535bf2; */
-    /* border: 2px solid black; */
+    position: absolute;
+    width: 100%;
+}
+
+#scroll-indicator {
+    color: black;
+    transform: translate(-50%, 0);
+    font-weight: bold;
+    position: absolute;
+    bottom: 2rem;
+    left: 50vw;
+    border-color: green;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+#scroll-line {
+    height: 4rem;
+    border: 2px solid black;
+    width: 0;
 }
 
 #text-div {
-    /* border: 2px solid white; */
-    height: calc(100% - 6rem);
+    height: 100%;
     width: 50%;
-    display: flex;
-    gap: 2rem;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding-left: 7rem;
     font-family: "Inconsolata", monospace;
     font-weight: bold;
-    margin-bottom: 4rem;
 }
 
 #logo-div {
@@ -35,22 +47,28 @@ nav {
     margin-right: auto;
 }
 
-
 #hero-img {
-    position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
     animation: slide 12s ease-in-out forwards, fade-in 3s;
 }
 
+#inner-text-div {
+    padding-left: 6rem;
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+
 #img-div {
-    z-index: -1;
-    position: absolute;
-    /* border: 2px solid white; */
-    height: calc(100%);
-    width: 75%;
-    bottom: 0;
+    height: 100%;
+    width: 50%;
 }
 
 #about-section {
@@ -60,9 +78,9 @@ nav {
 }
 
 #hero-section {
+    display: flex;
     height: 100vh;
     width: 100vw;
-    /* background-color: #535bf2; */
 }
 
 #first-text {
@@ -109,7 +127,7 @@ nav {
 
 @keyframes slide {
     from {
-        right: -900px;
+        right: 200px;
     }
 
     to {
