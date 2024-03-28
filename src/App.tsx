@@ -33,24 +33,28 @@ function App() {
     }
     return (
         <div>
-            <nav className="header">
-                <ul>
-                    <li id="logo-div">
-                        <p id="logo-temp">Proud to Pierce</p>
-                    </li>
-                    {/* <li>About</li> */}
-                    {/* <li>Products</li> */}
-                    <li>
-                        <img className="nav-icons" src={cart} />
-                    </li>
-                    <li>
-                        <img  className="nav-icons" src={search} />
-                    </li>
-                </ul>
-            </nav>
             <section id="hero-section">
+                <nav className="header">
+                    <ul>
+                        <li id="logo-div">
+                            <p id="logo-temp">Proud to Pierce</p>
+                        </li>
+                        {/* <li>About</li> */}
+                        {/* <li>Products</li> */}
+                        <li>
+                            <img className="nav-icons" src={cart} />
+                        </li>
+                        <li>
+                            <img className="nav-icons" src={search} />
+                        </li>
+                    </ul>
+                </nav>
                 <div id="text-div">
-                    <div id="first-text">Wearing <span style={{color: "black"}}>piercings </span>makes me</div>
+                    <div id="first-text">
+                        Wearing{" "}
+                        <span style={{ color: "black" }}>piercings </span>makes
+                        me
+                    </div>
                     <div id="moving-text">
                         <p
                             id="moving-p"
