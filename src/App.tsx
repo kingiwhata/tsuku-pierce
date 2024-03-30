@@ -95,17 +95,13 @@ function App() {
                 </div>
             </section>
             <section id="about-section">
+                <div id="who-we">WHO WE ARE</div>
                 <div id="about-div">
                     <div id="about-header">
-                        <h2>About Us</h2>
+                        <h2>Mcdonalds sushi tuna sashimi yadda</h2>
+                        <h2>Sushi tuna sashimi yadda</h2>
                     </div>
                     <div id="img-text-about-div">
-                        <div id="about-img-div">
-                            <img
-                                id="about-img"
-                                src="https://images.unsplash.com/photo-1620891203092-971780cc3703?q=80&w=1059&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            />
-                        </div>
                         <div id="about-text">
                             <p>
                                 Lorem Ipsum is simply dummy text of the printing
@@ -122,6 +118,16 @@ function App() {
                                 software like Aldus PageMaker including versions
                                 of Lorem Ipsum.
                             </p>
+                        </div>
+                        <div id="about-img-div">
+                            <img
+                                id="about-img"
+                                src="https://images.unsplash.com/photo-1620891203092-971780cc3703?q=80&w=1059&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            />
+                            <img
+                                id="about-img"
+                                src="https://images.unsplash.com/photo-1620891203092-971780cc3703?q=80&w=1059&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            />
                         </div>
                     </div>
                 </div>
