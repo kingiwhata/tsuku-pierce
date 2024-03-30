@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import cart from "./assets/pierce-cart.svg";
 import search from "./assets/pierce-search.svg";
+import insta from "./assets/pierce-insta.svg";
+import fb from "./assets/pierce-facebook.svg";
 
 function App() {
     const whyArr = [
@@ -43,6 +45,7 @@ function App() {
             { threshold: 0.01 }
         );
         const element = document.querySelector("#img-text-about-div");
+        //@ts-expect-error f u bish
         observer.observe(element);
     });
     return (
@@ -123,9 +126,60 @@ function App() {
                     </div>
                 </div>
             </section>
-            <section id="shop-section"></section>
-            <section id="insta-section"></section>
-            <footer></footer>
+            <section id="shop-section">
+                <div id="shop-div">
+                    <div id="shop-inner"></div>
+                </div>
+            </section>
+            <section id="insta-section">
+                <div id="insta-div">
+                    <div id="insta-inner"></div>
+                </div>
+            </section>
+            <footer>
+                <div id="footer-div">
+                    <div id="footer-inner">
+                        <div className="footers">
+                            <div className="sub-header">
+                                <h2>About</h2>
+                            </div>
+                            <div className="footer-divs">
+                                <p>Privacy Policy</p>
+                                <p>Hamburger</p>
+                            </div>
+                        </div>
+                        <div className="footers">
+                            <div className="sub-header">
+                                <h2>Information</h2>
+                            </div>
+                            <div className="footer-divs">
+                                <p>Privacy Policy</p>
+                                <p>Hamburger</p>
+                                <p>Smoothie</p>
+                            </div>
+                        </div>
+                        <div className="footers">
+                            <div className="sub-header">
+                                <h2>Subscribe</h2>
+                            </div>
+                            <div id="sub-div">
+                                <input type="text" id="sub-input" />
+                                <button>Subscribe</button>
+                            </div>
+                            <div id="footer-socials">
+                                <img src={insta} />
+                                <img src={fb} />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="copyright-div">
+                        <div id="copyright-inner">
+                            <p>© All rights reserved. Proud to Pierce</p>
+                            <div id="pay-div"></div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
     );
 }

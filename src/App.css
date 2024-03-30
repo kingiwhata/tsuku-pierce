@@ -48,6 +48,7 @@ nav {
 }
 
 #hero-img {
+
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -88,7 +89,7 @@ nav {
 
 #about-img-div {
     height: 50%;
-    width:50%;
+    width: 50%;
 }
 
 #about-img {
@@ -114,6 +115,7 @@ nav {
 }
 
 #hero-section {
+    background: linear-gradient( 180deg, rgba(0, 115, 197, 1) 0%, rgba(200, 0, 255, 1) 100% );;
     display: flex;
     height: 100vh;
     width: 100vw;
@@ -150,6 +152,90 @@ nav {
     width: 2rem;
 }
 
+#shop-div {
+    padding: 0 15rem;
+}
+
+footer {
+    height: 20rem;
+    width: 100%;
+}
+
+#footer-div {
+    height: 100%;
+    width: 100%;
+}
+
+#footer-inner {
+}
+
+.footers {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 33%;
+}
+
+#copyright-div {
+    font-size: x-small;
+    width: 100%;
+    height: 2rem;
+    background-color: gray;
+}
+
+#copyright-inner {
+    padding: 0 15rem;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#footer-socials {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    justify-content: flex-start;
+}
+
+#footer-socials > img {
+    width: 2rem;
+}
+
+#footer-inner {
+    height: 100%;
+    padding: 3rem 15rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-divs {
+    width: 100%;
+    text-align: left;
+    font-size: small;
+}
+
+.sub-header {
+    width: 100%;
+    text-align: left;
+}
+
+#sub-div {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+}                            
+
+#sub-div > input {
+    height: 2rem;
+    width: 100%;
+}
+
+#sub-div > button {
+    padding: 0.5rem;
+}
+
 @keyframes move {
     0% {
         transform: translateX(600px);
@@ -158,7 +244,6 @@ nav {
     100% {
         transform: translateX(50px);
     }
-
 }
 
 @keyframes slide {
