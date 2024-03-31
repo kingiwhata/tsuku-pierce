@@ -12,7 +12,6 @@ body {
 
 nav {
     position: absolute;
-    width: 100%;
 }
 
 #scroll-indicator {
@@ -73,18 +72,29 @@ nav {
 }
 
 #about-header {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 1rem;
     width: 100%;
+}
+
+#about-text > p {
+    font-size: 2rem;
 }
 
 #about-section {
     color: black;
-    width: 100vw;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    line-height: 1;
+    font-style: normal;
     display: flex;
     flex-direction: column;
     background-color: white;
 }
 
 #about-img-div {
+    z-index: 1111111;
     height: 50%;
     width: 100%;
     gap: 1rem;
@@ -112,7 +122,7 @@ nav {
     position: absolute;
     height: 70%;
     color: gray;
-    font-size: 20rem;
+    font-size: 32rem;
     white-space: nowrap;
     opacity: 0.1;
     display: flex;
@@ -141,7 +151,6 @@ nav {
     );
     display: flex;
     height: 100vh;
-    width: 100vw;
     overflow-x: hidden;
 }
 
@@ -175,13 +184,55 @@ nav {
     width: 2rem;
 }
 
+#shop-section {
+}
+
+.card-pic {
+    background-color: white;
+    border-radius: 50%;
+    height: 17rem;
+    width: 17rem;
+}
+
+.card-text-div {
+    height: auto;
+    opacity: 1;
+    display: flex;
+}
+
+.shop-card {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    color: black;
+    flex-direction: column;
+    padding: 2rem;
+    width: 22%;
+    background-color: #818181;
+    height: 26rem;
+}
+
+#cards-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
 #shop-div {
-    padding: 0 15rem;
+    padding: 6rem 15rem;
 }
 
 footer {
+    background-color: darkgray;
     height: 14rem;
     width: 100%;
+}
+
+#hero-wrapper {
+    padding: 1rem;
 }
 
 #footer-div {
@@ -190,6 +241,7 @@ footer {
 }
 
 #footer-inner {
+    background-color: #222222;
 }
 
 .footers {
@@ -203,7 +255,7 @@ footer {
     font-size: x-small;
     width: 100%;
     height: 2rem;
-    background-color: darkgray;
+    background-color: #818181;
 }
 
 #copyright-inner {
