@@ -1,10 +1,20 @@
 import React from "react";
 import type { Metadata } from "next";
+import {  Bebas_Neue } from "next/font/google";
 
+
+const bebasNeue = Bebas_Neue({
+    subsets: ["latin"],
+    weight: "400",
+    display: "auto",
+    variable: "--font-bebas"
+});
+
+// eslint-disable-next-line react-refresh/only-export-components
 export const metadata: Metadata = {
     title: "Proud to Pierce",
-    description: "Placeholder..."
-}
+    description: "Placeholder...",
+};
 
 export default function RootLayout({
     children,
@@ -12,18 +22,8 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en">
+        <html lang="en" className={`${bebasNeue.variable}`}>
             <head>
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anta&family=Bebas+Neue&family=Krona+One&family=Patua+One&family=Special+Elite&family=Syncopate:wght@700&display=swap"
-                    rel="stylesheet"
-                />
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap"
-                    rel="stylesheet"
-                />
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" />
                 <link
                     href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap"
                     rel="stylesheet"

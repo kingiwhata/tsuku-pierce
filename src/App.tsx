@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import { rockSalt } from "./app/fonts"
 
 function App() {
     const whyArr = [
@@ -92,6 +93,7 @@ function App() {
                             </div>
                             <div id="moving-text">
                                 <p
+                                    className={rockSalt.className}
                                     id="moving-p"
                                     onAnimationIteration={() => triggerMove()}
                                 >

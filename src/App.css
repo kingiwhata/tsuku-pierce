@@ -87,7 +87,7 @@ nav {
 
 #about-section {
     color: black;
-    font-family: "Bebas Neue", sans-serif;
+    font-family: var(--font-bebas);
     font-weight: 400;
     line-height: 1;
     font-style: normal;
