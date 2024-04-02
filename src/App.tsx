@@ -1,10 +1,5 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import cart from "./assets/pierce-cart.svg";
-import rect from "./assets/rect.svg";
-import search from "./assets/pierce-search.svg";
-import insta from "./assets/pierce-insta.svg";
-import fb from "./assets/pierce-facebook.svg";
 
 function App() {
     const whyArr = [
@@ -76,10 +71,10 @@ function App() {
                             {/* <li>About</li> */}
                             {/* <li>Products</li> */}
                             <li>
-                                <img className="nav-icons" src={cart} />
+                                <img className="nav-icons" src="/pierce-cart.svg" />
                             </li>
                             <li>
-                                <img className="nav-icons" src={search} />
+                                <img className="nav-icons" src="/pierce-search.svg" />
                             </li>
                             <li id="logo-div">
                                 <p id="logo-temp">Proud to Pierce</p>
@@ -108,7 +103,7 @@ function App() {
                     <div id="img-div">
                         <img
                             id="hero-img"
-                            src="src/assets/placeholder-removebg.png"
+                            src="/placeholder-removebg.png"
                         />
                     </div>
                     <div id="scroll-indicator">
@@ -248,8 +243,8 @@ function App() {
                                 <button>Subscribe</button>
                             </div>
                             <div id="footer-socials">
-                                <img src={insta} />
-                                <img src={fb} />
+                                <img src="/pierce-insta.svg" />
+                                <img src="/pierce-facebook.svg" />
                             </div>
                         </div>
                     </div>
