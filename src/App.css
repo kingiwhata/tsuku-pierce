@@ -11,6 +11,7 @@ body {
 }
 
 nav {
+    width: 100%;
     position: absolute;
 }
 
@@ -35,6 +36,7 @@ nav {
 }
 
 #text-div {
+    z-index: 999;
     height: 100%;
     width: 50%;
     font-family: "Inconsolata", monospace;
@@ -43,7 +45,7 @@ nav {
 
 #logo-div {
     justify-self: flex-start;
-    margin-right: auto;
+    margin-left: auto;
 }
 
 #hero-img {
@@ -66,6 +68,7 @@ nav {
 }
 
 #img-div {
+    z-index: 9999999;
     height: 100%;
     width: 50%;
     overflow: hidden;
@@ -256,6 +259,12 @@ footer {
     width: 100%;
     height: 2rem;
     background-color: #818181;
+}
+
+#my-div {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
 }
 
 #copyright-inner {

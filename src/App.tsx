@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import cart from "./assets/pierce-cart.svg";
+import rect from "./assets/rect.svg";
 import search from "./assets/pierce-search.svg";
 import insta from "./assets/pierce-insta.svg";
 import fb from "./assets/pierce-facebook.svg";
@@ -52,11 +53,26 @@ function App() {
         <div>
             <div id="hero-wrapper">
                 <section id="hero-section">
+                    <div id="my-div">
+                        <svg
+                            width="100%"
+                            height="100%"
+                            viewBox="0 0 100 100"
+                            preserveAspectRatio="none"
+                        >
+                            <line
+                                x1="80"
+                                y1="-50"
+                                x2="20"
+                                y2="150"
+                                vector-effect="non-scaling-stroke"
+                                stroke="white"
+                                strokeWidth={"35rem"}
+                            />
+                        </svg>
+                    </div>
                     <nav className="header">
                         <ul>
-                            <li id="logo-div">
-                                <p id="logo-temp">Proud to Pierce</p>
-                            </li>
                             {/* <li>About</li> */}
                             {/* <li>Products</li> */}
                             <li>
@@ -64,6 +80,9 @@ function App() {
                             </li>
                             <li>
                                 <img className="nav-icons" src={search} />
+                            </li>
+                            <li id="logo-div">
+                                <p id="logo-temp">Proud to Pierce</p>
                             </li>
                         </ul>
                     </nav>
@@ -112,8 +131,7 @@ function App() {
                             </div>
                             <p>
                                 Offering a wide range of affordable products
-                                <br>
-                                </br>
+                                <br></br>
                                 Proud to Pierce is here for you!
                             </p>
                         </div>
