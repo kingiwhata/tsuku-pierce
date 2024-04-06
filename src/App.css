@@ -5,6 +5,17 @@
     text-align: center;
 }
 
+#insta-div {
+    height: 50vh;
+    width: 100vw;
+    background: green;
+}
+
+#insta-inner {
+    padding: 0rem 15rem;
+
+}
+
 body {
     font-family: Noto Sans, Noto Sans CJK JP, Noto Sans CJK JP Subset,
         sans-serif;
@@ -13,6 +24,7 @@ body {
 nav {
     width: 100%;
     position: absolute;
+    z-index: 111111;
 }
 
 #scroll-indicator {

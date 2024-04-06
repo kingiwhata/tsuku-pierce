@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { rockSalt } from "./app/fonts"
+import Link from "next/link";
 
 function App() {
     const whyArr = [
@@ -61,7 +62,7 @@ function App() {
                                 y1="-50"
                                 x2="20"
                                 y2="150"
-                                vector-effect="non-scaling-stroke"
+                                vectorEffect="non-scaling-stroke"
                                 stroke="white"
                                 strokeWidth={"35rem"}
                             />
@@ -72,7 +73,9 @@ function App() {
                             {/* <li>About</li> */}
                             {/* <li>Products</li> */}
                             <li>
-                                <img className="nav-icons" src="/pierce-cart.svg" />
+                                <Link href="/checkout">
+                                    <img className="nav-icons" src="/pierce-cart.svg" />
+                                </Link>
                             </li>
                             <li>
                                 <img className="nav-icons" src="/pierce-search.svg" />
@@ -211,7 +214,9 @@ function App() {
             </section>
             <section id="insta-section">
                 <div id="insta-div">
-                    <div id="insta-inner"></div>
+                    <div id="insta-inner">
+
+                    </div>
                 </div>
             </section>
             <footer>
