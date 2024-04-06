@@ -3,6 +3,8 @@ import "./App.css";
 import { rockSalt } from "./app/fonts"
 import Link from "next/link";
 
+import fetchProducts from "./app/components/front-shop";
+
 function App() {
     const whyArr = [
         "PROUD",
@@ -152,6 +154,7 @@ function App() {
                 <div id="who-we">SHOP NOW</div>
                 <div id="shop-div">
                     <div id="shop-inner">
+                        {fetchProducts()}
                         <div id="cards-div">
                             <div
                                 className="shop-card"
