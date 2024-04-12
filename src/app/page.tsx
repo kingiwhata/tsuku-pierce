@@ -1,9 +1,10 @@
+'use client'
 import { useEffect, useState } from "react";
-import "./App.css";
-import { rockSalt } from "./app/fonts"
+
+import { rockSalt } from "./fonts";
 import Link from "next/link";
 
-import fetchProducts from "./app/components/front-shop";
+import fetchProducts from "../../src/components/front-shop";
 
 function App() {
     const whyArr = [
@@ -49,9 +50,9 @@ function App() {
         observer.observe(element);
     });
     return (
-        <div>
-            <div id="hero-wrapper">
-                <section id="hero-section">
+        <>
+            <div className="p-4">
+                <section id="hero-section" className="flex h-screen overflow-x-hidden">
                     <div id="my-div">
                         <svg
                             width="100%"
@@ -70,30 +71,27 @@ function App() {
                             />
                         </svg>
                     </div>
-                    <nav className="header">
+                    <nav className="header px-24 py-5">
                         <ul>
-                            {/* <li>About</li> */}
-                            {/* <li>Products</li> */}
                             <li>
                                 <Link href="/checkout">
-                                    <img className="nav-icons" src="/pierce-cart.svg" />
+                                    <img className="h-8 w-8" src="/pierce-cart.svg" />
                                 </Link>
                             </li>
                             <li>
-                                <img className="nav-icons" src="/pierce-search.svg" />
+                                <img className="h-8 w-8" src="/pierce-search.svg" />
                             </li>
-                            <li id="logo-div">
+                            <li className="justify-start ml-auto">
                                 <p id="logo-temp">Proud to Pierce</p>
                             </li>
                         </ul>
                     </nav>
-                    <div id="text-div">
-                        <div id="inner-text-div">
-                            <div id="first-text">
+                    <div className="w-1/2 z-10 h-full font-bold">
+                        <div 
+                            className="flex flex-col h-screen justify-center items-start gap-8 pl-24">
+                            <div className="text-black text-[2.5rem]">
                                 Wearing{" "}
-                                <span style={{ color: "black" }}>
-                                    piercings{" "}
-                                </span>
+                                piercings{" "}
                                 makes me
                             </div>
                             <div id="moving-text">
@@ -107,7 +105,7 @@ function App() {
                             </div>
                         </div>
                     </div>
-                    <div id="img-div">
+                    <div className="z-50 h-full w-1/2 overflow-hidden">
                         <img
                             id="hero-img"
                             src="/placeholder-removebg.png"
@@ -125,13 +123,13 @@ function App() {
                 <div id="about-div">
                     <div id="img-text-about-div">
                         <div id="about-text">
-                            <div id="about-header">
+                            <div id="about-header" className="text-[3rem]  mb-4 w-full">
                                 <h2>
                                     Body piercings that give voice to how you
                                     feel
                                 </h2>
                             </div>
-                            <p>
+                            <p className="text-[2rem]">
                                 Offering a wide range of affordable products
                                 <br></br>
                                 Proud to Pierce is here for you!
@@ -222,39 +220,38 @@ function App() {
                     </div>
                 </div>
             </section>
-            <footer>
-                <div id="footer-div">
-                    <div id="footer-inner">
-                        <div className="footers">
-                            <div className="sub-header">
-                                <h2>About</h2>
+            <footer className="bg-[darkgray] h-56 w-full">
+                <div className="h-full w-full">
+                    <div className="bg-[#222222] h-full py-12 px-60 flex flex-row">
+                        <div className="flex flex-col gap-2 w-1/3">
+                            <div className="w-100 text-left"> <h2>About</h2>
                             </div>
-                            <div className="footer-divs">
+                            <div className="w-full text-left text-xs">
                                 <p>Privacy Policy</p>
                                 <p>Hamburger</p>
                             </div>
                         </div>
-                        <div className="footers">
-                            <div className="sub-header">
+                        <div className="flex flex-col gap-2 w-1/3">
+                            <div className="w-100 text-left">
                                 <h2>Information</h2>
                             </div>
-                            <div className="footer-divs">
+                            <div className="w-full text-left text-xs">
                                 <p>Privacy Policy</p>
                                 <p>Hamburger</p>
                                 <p>Smoothie</p>
                             </div>
                         </div>
-                        <div className="footers">
-                            <div className="sub-header">
+                        <div className="flex flex-col gap-2 w-1/3">
+                            <div className="w-100 text-left">
                                 <h2>Subscribe</h2>
                             </div>
-                            <div id="sub-div">
-                                <input type="text" id="sub-input" />
-                                <button>Subscribe</button>
+                            <div className="flex flex-row gap-2">
+                                <input type="text" className="h-8 w-full" />
+                                <button className="p-2">Subscribe</button>
                             </div>
-                            <div id="footer-socials">
-                                <img src="/pierce-insta.svg" />
-                                <img src="/pierce-facebook.svg" />
+                            <div className="flex w-full gap-4 justify-start">
+                                <img className="w-8" src="/pierce-insta.svg" />
+                                <img className="w-8" src="/pierce-facebook.svg" />
                             </div>
                         </div>
                     </div>
@@ -266,7 +263,7 @@ function App() {
                     </div>
                 </div>
             </footer>
-        </div>
+        </>
     );
 }
 

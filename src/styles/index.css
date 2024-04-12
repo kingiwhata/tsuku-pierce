@@ -54,12 +54,10 @@ h1 {
 }
 
 #logo-temp {
+    font-family: var(--font-bebas);
     font-weight: bolder;
     line-height: 1.1;
     font-size: 3rem;
-}
-
-button {
 }
 
 button:hover {

@@ -34,7 +34,6 @@ nav {
     position: absolute;
     bottom: 2rem;
     left: 50vw;
-    border-color: green;
     display: flex;
     gap: 0.5rem;
     flex-direction: column;
@@ -48,53 +47,13 @@ nav {
 }
 
 #text-div {
-    z-index: 999;
-    height: 100%;
-    width: 50%;
-    font-family: "Inconsolata", monospace;
-    font-weight: bold;
-}
-
-#logo-div {
-    justify-self: flex-start;
-    margin-left: auto;
+    font-family: "Inconsolata";
 }
 
 #hero-img {
-    width: 100%;
     height: 100%;
     object-fit: cover;
     animation: slide 12s ease-in-out, fade-in 3s;
-}
-
-#inner-text-div {
-    padding-left: 6rem;
-    height: 100vh;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 2rem;
-    width: 100%;
-}
-
-#img-div {
-    z-index: 9999999;
-    height: 100%;
-    width: 50%;
-    overflow: hidden;
-}
-
-#about-header {
-    font-size: 3rem;
-    line-height: 1;
-    margin-bottom: 1rem;
-    width: 100%;
-}
-
-#about-text > p {
-    font-size: 2rem;
 }
 
 #about-section {
@@ -164,16 +123,8 @@ nav {
         rgba(0, 115, 197, 1) 0%,
         rgba(200, 0, 255, 1) 100%
     );
-    display: flex;
-    height: 100vh;
-    overflow-x: hidden;
 }
 
-#first-text {
-    color: black;
-    font-size: 2.5rem;
-    letter-spacing: -0.01rem;
-}
 #moving-p {
     animation: move 4s ease-out infinite;
     animation-delay: 15s;
@@ -192,14 +143,6 @@ nav {
     font-size: 5.5rem;
     font-family: "Rock Salt", cursive;
     overflow-x: clip;
-}
-
-.nav-icons {
-    height: 2rem;
-    width: 2rem;
-}
-
-#shop-section {
 }
 
 .card-pic {
@@ -240,32 +183,6 @@ nav {
     padding: 6rem 15rem;
 }
 
-footer {
-    background-color: darkgray;
-    height: 14rem;
-    width: 100%;
-}
-
-#hero-wrapper {
-    padding: 1rem;
-}
-
-#footer-div {
-    height: 100%;
-    width: 100%;
-}
-
-#footer-inner {
-    background-color: #222222;
-}
-
-.footers {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    width: 33%;
-}
-
 #copyright-div {
     font-size: x-small;
     width: 100%;
@@ -274,6 +191,7 @@ footer {
 }
 
 #my-div {
+    z-index: 1;
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -288,54 +206,10 @@ footer {
     justify-content: space-between;
 }
 
-#footer-socials {
-    display: flex;
-    width: 100%;
-    gap: 1rem;
-    justify-content: flex-start;
-}
-
-#footer-socials > img {
-    width: 2rem;
-}
-
-#footer-inner {
-    height: 100%;
-    padding: 3rem 15rem;
-    display: flex;
-    flex-direction: row;
-}
-
-.footer-divs {
-    width: 100%;
-    text-align: left;
-    font-size: small;
-}
-
-.sub-header {
-    width: 100%;
-    text-align: left;
-}
-
-#sub-div {
-    width: 100%;
-    display: flex;
-    gap: 1rem;
-}
-
 #pay-div {
     display: flex;
     flex-direction: row;
     gap: 0.5rem;
-}
-
-#sub-div > input {
-    height: 2rem;
-    width: 100%;
-}
-
-#sub-div > button {
-    padding: 0.5rem;
 }
 
 @keyframes move {

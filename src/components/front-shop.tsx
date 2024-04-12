@@ -10,8 +10,8 @@ function fetchProducts() {
         </div>
     ) : (
         <div>
-            {products?.map((product) => (
-                <div>
+            {products?.map((product, i) => (
+                <div key={i}>
                     {product.title}
                 </div>
             ))}

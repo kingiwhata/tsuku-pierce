@@ -1,21 +1,19 @@
-"use client";
-
-import React from "react";
-import dynamic from "next/dynamic";
+'use client'
 import { MedusaProvider } from "medusa-react";
 import { QueryClient } from "@tanstack/react-query";
 
 const queryClient = new QueryClient();
 
-const App = dynamic(() => import("../../page"), { ssr: false });
-
-export function ClientOnly() {
+//@ts-ignore
+export function MedusaProviders({ children }) {
     return (
         <MedusaProvider
-            queryClientProviderProps={{ client: queryClient }}
             baseUrl="http://localhost:9000"
+            queryClientProviderProps={{ client: queryClient }}
         >
-            <App/>
+            {children}
         </MedusaProvider>
     )
+
+
 }

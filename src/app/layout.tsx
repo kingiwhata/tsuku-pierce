@@ -1,6 +1,11 @@
 import React from "react";
 import type { Metadata } from "next";
 import { bebasNeue } from "./fonts";
+import { MedusaProviders } from "./providers";
+
+import "../styles/App.css";
+import "../styles/index.css";
+import "../styles/global.css";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const metadata: Metadata = {
@@ -22,7 +27,9 @@ export default function RootLayout({
                 />
             </head>
             <body>
-                <div id="root">{children}</div>
+                <MedusaProviders>
+                    <div className=""id="root">{children}</div>
+                </MedusaProviders>
             </body>
         </html>
     );
