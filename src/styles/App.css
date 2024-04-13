@@ -1,30 +1,6 @@
-#root {
-    width: 100vw;
-    height: 100vh;
-    margin: 0 auto;
-    text-align: center;
-}
-
-#insta-div {
-    height: 50vh;
-    width: 100vw;
-    background: green;
-}
-
-#insta-inner {
-    padding: 0rem 15rem;
-
-}
-
 body {
     font-family: Noto Sans, Noto Sans CJK JP, Noto Sans CJK JP Subset,
         sans-serif;
-}
-
-nav {
-    width: 100%;
-    position: absolute;
-    z-index: 111111;
 }
 
 #scroll-indicator {
@@ -38,12 +14,7 @@ nav {
     gap: 0.5rem;
     flex-direction: column;
     align-items: center;
-}
-
-#scroll-line {
-    height: 4rem;
-    border: 2px solid black;
-    width: 0;
+    z-index: 50;
 }
 
 #text-div {
@@ -145,19 +116,6 @@ nav {
     overflow-x: clip;
 }
 
-.card-pic {
-    background-color: white;
-    border-radius: 50%;
-    height: 17rem;
-    width: 17rem;
-}
-
-.card-text-div {
-    height: auto;
-    opacity: 1;
-    display: flex;
-}
-
 .shop-card {
     display: flex;
     justify-content: flex-start;
@@ -169,18 +127,6 @@ nav {
     width: 22%;
     background-color: #818181;
     height: 26rem;
-}
-
-#cards-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4rem;
-    flex-wrap: wrap;
-}
-
-#shop-div {
-    padding: 6rem 15rem;
 }
 
 #copyright-div {
@@ -204,12 +150,6 @@ nav {
     height: 100%;
     align-items: center;
     justify-content: space-between;
-}
-
-#pay-div {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
 }
 
 @keyframes move {

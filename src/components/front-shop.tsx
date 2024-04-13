@@ -1,7 +1,7 @@
 //import { Product } from "@medusajs/medusa";
 import { useProducts } from "medusa-react";
 
-function fetchProducts() {
+export function Products() {
     const { products, isLoading } = useProducts();
 
     return isLoading ? (
@@ -9,14 +9,13 @@ function fetchProducts() {
             Loading...
         </div>
     ) : (
-        <div>
+        <>
             {products?.map((product, i) => (
-                <div key={i}>
+                <div key={i} className="shop-card">
+                    <div className="card-pic"></div>
                     {product.title}
                 </div>
             ))}
-        </div>
+        </>
     )
 }
-
-export default fetchProducts;
