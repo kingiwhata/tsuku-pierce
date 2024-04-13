@@ -1,5 +1,8 @@
 body {
-    font-family: Noto Sans, Noto Sans CJK JP, Noto Sans CJK JP Subset,
+    font-family:
+        Noto Sans,
+        Noto Sans CJK JP,
+        Noto Sans CJK JP Subset,
         sans-serif;
 }
 
@@ -18,13 +21,15 @@ body {
 }
 
 #text-div {
-    font-family: "Inconsolata";
+    font-family: 'Inconsolata';
 }
 
 #hero-img {
     height: 100%;
     object-fit: cover;
-    animation: slide 12s ease-in-out, fade-in 3s;
+    animation:
+        slide 12s ease-in-out,
+        fade-in 3s;
 }
 
 #about-section {
@@ -63,6 +68,7 @@ body {
 }
 
 #who-we {
+    font-family: var(--font-bebas);
     width: 100%;
     position: absolute;
     height: 70%;
@@ -72,6 +78,7 @@ body {
     opacity: 0.1;
     display: flex;
     justify-content: center;
+    align-items: center;
     overflow: hidden;
 }
 
@@ -112,7 +119,7 @@ body {
     border: 5.5px solid black;
     font-weight: bold;
     font-size: 5.5rem;
-    font-family: "Rock Salt", cursive;
+    font-family: 'Rock Salt', cursive;
     overflow-x: clip;
 }
 
@@ -129,27 +136,11 @@ body {
     height: 26rem;
 }
 
-#copyright-div {
-    font-size: x-small;
-    width: 100%;
-    height: 2rem;
-    background-color: #818181;
-}
-
 #my-div {
     z-index: 1;
     position: absolute;
     width: 100vw;
     height: 100vh;
-}
-
-#copyright-inner {
-    padding: 0 15rem;
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-    align-items: center;
-    justify-content: space-between;
 }
 
 @keyframes move {

@@ -1,8 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-
 import { rockSalt } from './fonts';
-import Link from 'next/link';
 import { Products } from '../components/front-shop';
 
 function App() {
@@ -50,11 +48,11 @@ function App() {
     });
     return (
         <>
-            <div className="p-4">
-                <section
-                    id="hero-section"
-                    className="flex h-screen overflow-x-hidden"
-                >
+            <section
+                id="hero-section"
+                className="flex h-screen overflow-x-hidden"
+            >
+                <div className="flex overflow-x-hidden">
                     <div id="my-div">
                         <svg
                             width="100%"
@@ -73,27 +71,6 @@ function App() {
                             />
                         </svg>
                     </div>
-                    <nav className="w-full absolute z-50 header px-24 py-5">
-                        <ul>
-                            <li>
-                                <Link href="/checkout">
-                                    <img
-                                        className="h-8 w-8"
-                                        src="/pierce-cart.svg"
-                                    />
-                                </Link>
-                            </li>
-                            <li>
-                                <img
-                                    className="h-8 w-8"
-                                    src="/pierce-search.svg"
-                                />
-                            </li>
-                            <li className="justify-start ml-auto">
-                                <p id="logo-temp">Proud to Pierce</p>
-                            </li>
-                        </ul>
-                    </nav>
                     <div className="w-1/2 z-10 h-full font-bold">
                         <div className="flex flex-col h-screen justify-center items-start gap-8 pl-24">
                             <div className="text-black text-[2.5rem]">
@@ -115,13 +92,15 @@ function App() {
                     </div>
                     <div id="scroll-indicator">
                         <p>Scroll</p>
-                        <div className="h-16 border-solid border-black w-0"></div>
+                        <div className="h-16 border-2 border-solid border-black w-0"></div>
                     </div>
-                </section>
-            </div>
+                </div>
+            </section>
 
             <section id="about-section">
-                <div id="who-we">WHO WE ARE</div>
+                <div id="who-we">
+                    <p>WHO WE ARE</p>
+                </div>
                 <div id="about-div">
                     <div id="img-text-about-div">
                         <div id="about-text">
@@ -153,8 +132,10 @@ function App() {
                     </div>
                 </div>
             </section>
-            <section id="shop-section">
-                <div id="who-we">SHOP NOW</div>
+            <section id="shop-section" className="bg-red-400">
+                <div id="who-we">
+                    <p>SHOP NOW</p>
+                </div>
                 <div className="py-24 px-60">
                     <div className="flex flex-wrap gap-16 justify-center">
                         <Products />
@@ -167,54 +148,6 @@ function App() {
                     <div className="py-0 px-60"></div>
                 </div>
             </section>
-            <footer className="bg-[darkgray] h-56 w-full">
-                <div className="h-full w-full">
-                    <div className="bg-[#222222] h-full py-12 px-60 flex flex-row">
-                        <div className="flex flex-col gap-2 w-1/3">
-                            <div className="w-100 text-left">
-                                {' '}
-                                <h2>About</h2>
-                            </div>
-                            <div className="w-full text-left text-xs">
-                                <p>Privacy Policy</p>
-                                <p>Hamburger</p>
-                            </div>
-                        </div>
-                        <div className="flex flex-col gap-2 w-1/3">
-                            <div className="w-100 text-left">
-                                <h2>Information</h2>
-                            </div>
-                            <div className="w-full text-left text-xs">
-                                <p>Privacy Policy</p>
-                                <p>Hamburger</p>
-                                <p>Smoothie</p>
-                            </div>
-                        </div>
-                        <div className="flex flex-col gap-2 w-1/3">
-                            <div className="w-100 text-left">
-                                <h2>Subscribe</h2>
-                            </div>
-                            <div className="flex flex-row gap-2">
-                                <input type="text" className="h-8 w-full" />
-                                <button className="p-2">Subscribe</button>
-                            </div>
-                            <div className="flex w-full gap-4 justify-start">
-                                <img className="w-8" src="/pierce-insta.svg" />
-                                <img
-                                    className="w-8"
-                                    src="/pierce-facebook.svg"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <div id="copyright-div">
-                        <div className="copyright-inner">
-                            <p>© All rights reserved. Proud to Pierce</p>
-                            <div className="flex flex-row gap-2"></div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </>
     );
 }
