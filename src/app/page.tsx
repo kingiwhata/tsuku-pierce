@@ -1,7 +1,8 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { rockSalt } from './fonts';
+import { rockSalt, bebasNeue } from './fonts';
 import { Products } from '../components/front-shop';
+import Link from 'next/link';
 
 function App() {
     const whyArr = [
@@ -42,9 +43,12 @@ function App() {
             },
             { threshold: 0.01 },
         );
-        const element = document.querySelector('#img-text-about-div');
+        const aboutElement = document.querySelector('#about-div');
+        const shopElement = document.querySelector('#shop-div');
         //@ts-expect-error f u bish
-        observer.observe(element);
+        observer.observe(shopElement);
+        //@ts-expect-error f u bish
+        observer.observe(aboutElement);
     });
     return (
         <>
@@ -73,7 +77,7 @@ function App() {
                     </div>
                     <div className="w-1/2 z-10 h-full font-bold">
                         <div className="flex flex-col h-screen justify-center items-start gap-8 pl-24">
-                            <div className="text-black text-[2.5rem]">
+                            <div className="text-black text-[3.5rem] font-bebas">
                                 Wearing piercings makes me
                             </div>
                             <div id="moving-text">
@@ -91,23 +95,23 @@ function App() {
                         <img id="hero-img" src="/placeholder-removebg.png" />
                     </div>
                     <div id="scroll-indicator">
-                        <p>Scroll</p>
+                        <p className="font-bebas">Scroll</p>
                         <div className="h-16 border-2 border-solid border-black w-0"></div>
                     </div>
                 </div>
             </section>
 
             <section id="about-section">
-                <div id="who-we">
+                <div className="who-we">
                     <p>WHO WE ARE</p>
                 </div>
-                <div id="about-div">
-                    <div id="img-text-about-div">
+                <div className="py-24 px-60">
+                    <div
+                        id="about-div"
+                        className="flex flex-col items-center h-full justify-center gap-8"
+                    >
                         <div id="about-text">
-                            <div
-                                id="about-header"
-                                className="text-[3rem]  mb-4 w-full"
-                            >
+                            <div className="text-[3rem]  mb-4 w-full">
                                 <h2>
                                     Body piercings that give voice to how you
                                     feel
@@ -132,20 +136,63 @@ function App() {
                     </div>
                 </div>
             </section>
-            <section id="shop-section" className="bg-red-400">
-                <div id="who-we">
-                    <p>SHOP NOW</p>
+            <section id="shop-section" className="bg-[#00FFE1]">
+                <div className="who-we text-[31rem]">
+                    <p>SHOP WITH US</p>
                 </div>
-                <div className="py-24 px-60">
+                <div id="shop-div" className="py-24 px-60 flex flex-col gap-8">
+                    <div className="z-50 ">
+                        <div className="text-[3rem] w-full">
+                            <h2 className="font-bebas text-black">
+                                Our Products
+                            </h2>
+                        </div>
+                        <p className="text-[2rem] font-bebas text-black mb-3">
+                            <Link href="/shop">
+                                <button className="border-black bg-white py-1 px-3 rounded">
+                                    Shop All
+                                </button>
+                            </Link>
+                        </p>
+                        <p className="text-[2rem] font-bebas text-black">
+                            New Arrivals
+                        </p>
+                    </div>
                     <div className="flex flex-wrap gap-16 justify-center">
-                        <Products />
+                        <Products limit={5} />
                         <div className="flex justify-center items-center gap-16 flex-wrap"></div>
                     </div>
+                    <p className="text-[2rem] font-bebas text-black mb-3">
+                        <Link href="/shop">
+                            <button className="border-black bg-white py-1 px-3 rounded">
+                                See More
+                            </button>
+                        </Link>
+                    </p>
+                    <div className="z-50 ">
+                        <p className="text-[2rem] font-bebas text-black">
+                            Best Sellers
+                        </p>
+                    </div>
+                    <div className="flex flex-wrap gap-16 justify-center">
+                        <Products limit={5} />
+                        <div className="flex justify-center items-center gap-16 flex-wrap"></div>
+                    </div>
+                    <p className="text-[2rem] font-bebas text-black mb-3">
+                        <Link href="/shop">
+                            <button className="border-black bg-white py-1 px-3 rounded">
+                                See More
+                            </button>
+                        </Link>
+                    </p>
                 </div>
             </section>
             <section id="insta-section">
-                <div className="h-1/2 w-screen bg-green-100">
-                    <div className="py-0 px-60"></div>
+                <div className="who-we">
+                    <p>FOLLOW US</p>
+                </div>
+                <div className="py-24 px-60">
+                    <div className="h-screen"></div>
                 </div>
             </section>
         </>
