@@ -147,18 +147,11 @@ function App() {
                                 Our Products
                             </h2>
                         </div>
-                        <p className="text-[2rem] font-bebas text-black mb-3">
-                            <Link href="/shop">
-                                <button className="border-black bg-white py-1 px-3 rounded">
-                                    Shop All
-                                </button>
-                            </Link>
-                        </p>
                         <p className="text-[2rem] font-bebas text-black">
                             New Arrivals
                         </p>
                     </div>
-                    <div className="flex flex-wrap gap-16 justify-center">
+                    <div className="flex flex-wrap gap-16 justify-center h-64">
                         <Products limit={5} />
                         <div className="flex justify-center items-center gap-16 flex-wrap"></div>
                     </div>
@@ -174,7 +167,7 @@ function App() {
                             Best Sellers
                         </p>
                     </div>
-                    <div className="flex flex-wrap gap-16 justify-center">
+                    <div className="flex flex-wrap gap-16 justify-center h-64">
                         <Products limit={5} />
                         <div className="flex justify-center items-center gap-16 flex-wrap"></div>
                     </div>
@@ -192,7 +185,30 @@ function App() {
                     <p>FOLLOW US</p>
                 </div>
                 <div className="py-24 px-60">
-                    <div className="h-screen"></div>
+                    <div className="z-50 ">
+                        <div className="text-[3rem] w-full">
+                            <h2 className="font-bebas text-black">
+                                Our Socials
+                            </h2>
+                        </div>
+                        <p className="text-[2rem] font-bebas text-black mb-3">
+                            Keep Up To Date
+                        </p>
+                    </div>
+                    <div className="flex flex-row gap-2">
+                        <div className="h-[30rem] bg-black w-[30rem]">
+                            <img
+                                className="h-[30rem] w-[30rem]"
+                                src="https://images.unsplash.com/photo-1605740179653-9cc6fd743e04?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHBpZXJjaW5nfGVufDB8fDB8fHww"
+                            />
+                        </div>
+                        <div className="h-[30rem] w-[30rem] flex flex-row gap-2 flex-wrap">
+                            <div className="w-56 bg-black"></div>
+                            <div className="w-56 bg-black"></div>
+                            <div className="w-56 bg-black"></div>
+                            <div className="w-56 bg-black"></div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </>
