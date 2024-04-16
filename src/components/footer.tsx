@@ -1,7 +1,7 @@
 export function Footer() {
     return (
         <>
-            <footer className="bg-[darkgray] h-56 w-full">
+            <footer className="bg-[darkgray] h-64 w-full">
                 <div className="h-full w-full">
                     <div className="bg-[#222222] h-full py-12 px-60 flex flex-row">
                         <div className="flex flex-col gap-2 w-1/3">
@@ -14,13 +14,25 @@ export function Footer() {
                             </div>
                         </div>
                         <div className="flex flex-col gap-2 w-1/3">
-                            <div className="w-100 text-left">
-                                <h2>Information</h2>
+                            <div className="flex flex-col gap-2 w-1/2">
+                                <div className="w-100 text-left">
+                                    <h2>Sort By Gauge</h2>
+                                </div>
+                                <div className="w-full text-left text-xs">
+                                    <p>20G</p>
+                                    <p>18G</p>
+                                    <p>16G</p>
+                                </div>
                             </div>
-                            <div className="w-full text-left text-xs">
-                                <p>Privacy Policy</p>
-                                <p>Hamburger</p>
-                                <p>Smoothie</p>
+                            <div className="flex flex-col gap-2 w-1/2">
+                                <div className="w-100 text-left">
+                                    <h2>Sort By Category</h2>
+                                </div>
+                                <div className="w-full text-left text-xs">
+                                    <p>Privacy Policy</p>
+                                    <p>Hamburger</p>
+                                    <p>Smoothie</p>
+                                </div>
                             </div>
                         </div>
                         <div className="flex flex-col gap-2 w-1/3">
