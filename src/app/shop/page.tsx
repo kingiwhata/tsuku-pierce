@@ -3,27 +3,33 @@ import { useProducts } from 'medusa-react';
 import { Products } from '../../components/front-shop';
 export default function Page() {
     const { products, isLoading } = useProducts({ limit: 20 });
-    console.log(isLoading);
-    console.log(products);
+
+    function handleClick() {
+        console.log('Clicked');
+    }
+
     return (
         <section className="font-bebas flex w-screen">
             <div className="py-24 px-60 w-full h-full">
                 <div className="h-full w-full flex flex-row gap-8">
                     <div className="text-black w-1/5 h-full flex flex-col gap-4">
                         <div className="font-bold text-xl pt-4">Filter</div>
-                        <div className="pt-4 border-t-[1px] mx-6 text-left">
+                        <div className="pt-4 border-t-[1px] mx-6 text-left cursor-pointer">
                             Gauge
                         </div>
-                        <div className="pt-4 border-t-[1px] mx-6 text-left">
+                        <div className="pt-4 border-t-[1px] mx-6 text-left cursor-pointer">
                             Colour
                         </div>
-                        <div className="pt-4 border-t-[1px] mx-6 text-left">
+                        <div className="pt-4 border-t-[1px] mx-6 text-left cursor-pointer">
                             Style
                         </div>
-                        <div className="pt-4 border-t-[1px] mx-6 text-left">
+                        <div className="pt-4 border-t-[1px] mx-6 text-left cursor-pointer">
                             Price
                         </div>
-                        <div className="pt-4 border-t-[1px] mx-6 text-left">
+                        <div
+                            onClick={handleClick}
+                            className="pt-4 border-t-[1px] mx-6 text-left cursor-pointer"
+                        >
                             Material
                         </div>
                     </div>
