@@ -1,12 +1,15 @@
 'use client';
 import { useProducts } from 'medusa-react';
 import { Products } from '../../components/front-shop';
+import { Filters } from './components/filterboxes';
+import { useState } from 'react';
 export default function Page() {
     const { products, isLoading } = useProducts({ limit: 20 });
 
-    function handleClick() {
-        console.log('Clicked');
-    }
+    const [showGauge, setShowGauge] = useState(true);
+    const [showColour, setShowColour] = useState(false);
+    const [showStyle, setShowStyle] = useState(false);
+    const [showMaterial, setShowMaterial] = useState(false);
 
     return (
         <section className="font-bebas flex w-screen">
@@ -14,24 +17,80 @@ export default function Page() {
                 <div className="h-full w-full flex flex-row gap-8">
                     <div className="text-black w-1/5 h-full flex flex-col gap-4">
                         <div className="font-bold text-xl pt-4">Filter</div>
-                        <div className="pt-4 border-t-[1px] mx-6 text-left cursor-pointer">
+                        <div
+                            className="pt-4 border-t-[1px] mx-6 text-left cursor-pointer"
+                            onClick={() => setShowGauge(!showGauge)}
+                        >
                             Gauge
                         </div>
-                        <div className="pt-4 border-t-[1px] mx-6 text-left cursor-pointer">
+                        {showGauge ? (
+                            <Filters
+                                items={[
+                                    '14G',
+                                    '16G',
+                                    '00G',
+                                    '0G',
+                                    'Expander',
+                                    'Needle',
+                                ]}
+                            />
+                        ) : (
+                            <></>
+                        )}
+                        <div
+                            className="pt-4 border-t-[1px] mx-6 text-left cursor-pointer"
+                            onClick={() => setShowColour(!showColour)}
+                        >
                             Colour
                         </div>
-                        <div className="pt-4 border-t-[1px] mx-6 text-left cursor-pointer">
+
+                        {showColour ? (
+                            <Filters items={['Silver', 'Gold', 'Black']} />
+                        ) : (
+                            <></>
+                        )}
+                        <div
+                            className="pt-4 border-t-[1px] mx-6 text-left cursor-pointer"
+                            onClick={() => setShowStyle(!showStyle)}
+                        >
                             Style
                         </div>
+
+                        {showStyle ? (
+                            <Filters
+                                items={[
+                                    'Straight Barbell',
+                                    'Labret',
+                                    'Curved Barbell',
+                                    'Ring',
+                                    'Captive Ring',
+                                ]}
+                            />
+                        ) : (
+                            <></>
+                        )}
                         <div className="pt-4 border-t-[1px] mx-6 text-left cursor-pointer">
                             Price
                         </div>
                         <div
-                            onClick={handleClick}
                             className="pt-4 border-t-[1px] mx-6 text-left cursor-pointer"
+                            onClick={() => setShowMaterial(!showMaterial)}
                         >
                             Material
                         </div>
+
+                        {showMaterial ? (
+                            <Filters
+                                items={[
+                                    'Titanium',
+                                    'Surgical Steel',
+                                    'Bioplast',
+                                    'Sterling Steel',
+                                ]}
+                            />
+                        ) : (
+                            <></>
+                        )}
                     </div>
                     <div className="w-4/5 ">
                         <div className="text-black font-bold text-xl pt-4 mb-4">
