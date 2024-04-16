@@ -13,7 +13,9 @@ export function Nav() {
                     <img className="h-8 w-8" src="/pierce-search.svg" />
                 </li>
                 <li className="justify-start ml-auto">
-                    <p id="logo-temp">Proud to Pierce</p>
+                    <Link href="/">
+                        <p id="logo-temp">Proud to Pierce</p>
+                    </Link>
                 </li>
             </ul>
         </nav>

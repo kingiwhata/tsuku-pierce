@@ -9,13 +9,14 @@ export default function Page() {
     const [showGauge, setShowGauge] = useState(true);
     const [showColour, setShowColour] = useState(false);
     const [showStyle, setShowStyle] = useState(false);
+    const [showPrice, setShowPrice] = useState(false);
     const [showMaterial, setShowMaterial] = useState(false);
 
     return (
         <section className="font-bebas flex w-screen">
             <div className="py-24 px-60 w-full h-full">
                 <div className="h-full w-full flex flex-row gap-8">
-                    <div className="text-black w-1/5 h-full flex flex-col gap-4">
+                    <div className="text-black text-large w-1/5 h-full flex flex-col gap-4">
                         <div className="font-bold text-xl pt-4">Filter</div>
                         <div
                             className="pt-4 border-t-[1px] mx-6 text-left cursor-pointer"
@@ -26,12 +27,32 @@ export default function Page() {
                         {showGauge ? (
                             <Filters
                                 items={[
-                                    '14G',
-                                    '16G',
-                                    '00G',
-                                    '0G',
+                                    '16',
+                                    '14',
+                                    '0',
+                                    '00',
                                     'Expander',
                                     'Needle',
+                                ]}
+                            />
+                        ) : (
+                            <></>
+                        )}
+
+                        <div
+                            className="pt-4 border-t-[1px] mx-6 text-left cursor-pointer"
+                            onClick={() => setShowPrice(!showPrice)}
+                        >
+                            Price
+                        </div>
+
+                        {showPrice ? (
+                            <Filters
+                                items={[
+                                    '$0 - $10',
+                                    '$10 - $20',
+                                    '$20 - $30',
+                                    'Over $30',
                                 ]}
                             />
                         ) : (
@@ -69,9 +90,6 @@ export default function Page() {
                         ) : (
                             <></>
                         )}
-                        <div className="pt-4 border-t-[1px] mx-6 text-left cursor-pointer">
-                            Price
-                        </div>
                         <div
                             className="pt-4 border-t-[1px] mx-6 text-left cursor-pointer"
                             onClick={() => setShowMaterial(!showMaterial)}
