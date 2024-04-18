@@ -151,7 +151,7 @@ function App() {
                             New Arrivals
                         </p>
                     </div>
-                    <div className="flex flex-wrap gap-16 justify-center h-64">
+                    <div className="flex flex-wrap gap-4 justify-center h-64">
                         <Products limit={5} />
                         <div className="flex justify-center items-center gap-16 flex-wrap"></div>
                     </div>
@@ -167,7 +167,7 @@ function App() {
                             Best Sellers
                         </p>
                     </div>
-                    <div className="flex flex-wrap gap-16 justify-center h-64">
+                    <div className="flex flex-wrap gap-4 justify-center h-64">
                         <Products limit={5} />
                         <div className="flex justify-center items-center gap-16 flex-wrap"></div>
                     </div>

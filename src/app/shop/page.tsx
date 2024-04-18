@@ -1,8 +1,9 @@
 'use client';
 import { useProducts } from 'medusa-react';
-import { Products } from '../../components/front-shop';
+
 import { Filters } from './components/filterboxes';
 import { useState } from 'react';
+import Link from 'next/link';
 export default function Page() {
     const { products, isLoading } = useProducts({ limit: 20 });
 
@@ -116,41 +117,57 @@ export default function Page() {
                         </div>
                         <div className="items-start flex flex-row flex-wrap gap-4 bg-white">
                             {products?.map((product, i) => (
-                                <div
+                                <Link
                                     key={i}
-                                    className="shop-card z-50 basis-1/5 transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 duration-200 cursor-pointer"
+                                    className="w-[calc(20%-0.8rem)]"
+                                    href={{
+                                        pathname: `shop/${product
+                                            .title!.split(' ')
+                                            .join('-')
+                                            .toLowerCase()}`,
+                                    }}
                                 >
-                                    <div className="card-pic h-full w-full">
-                                        <img
-                                            className="h-full w-full"
-                                            src={product.thumbnail}
-                                            alt=""
-                                        />
+                                    <div className="w-full shop-card z-50 transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 duration-200 cursor-pointer">
+                                        <div className="card-pic h-full w-full">
+                                            <img
+                                                className="h-full w-full"
+                                                src={product.thumbnail}
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div className="font-bold absolute">
+                                            {product.title}
+                                        </div>
+                                        <div className="text-sm"></div>
                                     </div>
-                                    <div className="font-bold absolute">
-                                        {product.title}
-                                    </div>
-                                    <div className="text-sm"></div>
-                                </div>
+                                </Link>
                             ))}
-
                             {products?.map((product, i) => (
-                                <div
+                                <Link
                                     key={i}
-                                    className="shop-card z-50 basis-1/5 transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 duration-200 cursor-pointer"
+                                    className="w-[calc(20%-0.8rem)]"
+                                    href={
+                                        `shop/` +
+                                        product
+                                            .title!.split(' ')
+                                            .join('-')
+                                            .toLowerCase()
+                                    }
                                 >
-                                    <div className="card-pic h-full w-full">
-                                        <img
-                                            className="h-full w-full"
-                                            src={product.thumbnail}
-                                            alt=""
-                                        />
+                                    <div className="w-full shop-card z-50 transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 duration-200 cursor-pointer">
+                                        <div className="card-pic h-full w-full">
+                                            <img
+                                                className="h-full w-full"
+                                                src={product.thumbnail}
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div className="font-bold absolute">
+                                            {product.title}
+                                        </div>
+                                        <div className="text-sm"></div>
                                     </div>
-                                    <div className="font-bold absolute">
-                                        {product.title}
-                                    </div>
-                                    <div className="text-sm"></div>
-                                </div>
+                                </Link>
                             ))}
                         </div>
                     </div>
