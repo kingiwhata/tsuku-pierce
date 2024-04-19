@@ -1,6 +1,6 @@
 'use server';
 export async function registerUser(state: any, formData: FormData) {
-    console.log(state, formData.get('user'), formData.get('password'));
+    if (await checkEmail(formData.get('user')!.toString())) return;
     try {
         const res = await fetch(
             `${process.env.MEDUSA_BASE_URL}/store/customers`,
@@ -24,9 +24,9 @@ export async function registerUser(state: any, formData: FormData) {
                 //                }),
             },
         );
-
         if (res.ok) {
             const { customer } = await res.json();
+            console.log(customer);
             return customer;
         }
     } catch (error) {
@@ -70,5 +70,22 @@ export async function logoutUser() {
         }
     } catch (error) {
         console.error(`${error}: Couldn't create account.`);
+    }
+}
+
+export async function checkEmail(email: string) {
+    try {
+        const res = await fetch(
+            `${process.env.MEDUSA_BASE_URL}/store/auth/${email}`,
+            {
+                credentials: 'include',
+            },
+        );
+        if (res.ok) {
+            const { exists } = await res.json();
+            return exists;
+        }
+    } catch (error) {
+        console.error(`${error}: Email already registered.`);
     }
 }
