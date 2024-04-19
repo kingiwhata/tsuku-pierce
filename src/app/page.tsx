@@ -57,24 +57,6 @@ function App() {
                 className="flex h-screen overflow-x-hidden"
             >
                 <div className="flex overflow-x-hidden">
-                    <div id="my-div">
-                        <svg
-                            width="100%"
-                            height="100%"
-                            viewBox="0 0 100 100"
-                            preserveAspectRatio="none"
-                        >
-                            <line
-                                x1="80"
-                                y1="-50"
-                                x2="20"
-                                y2="150"
-                                vectorEffect="non-scaling-stroke"
-                                stroke="white"
-                                strokeWidth={'35rem'}
-                            />
-                        </svg>
-                    </div>
                     <div className="w-1/2 z-10 h-full font-bold">
                         <div className="flex flex-col h-screen justify-center items-start gap-8 pl-24">
                             <div className="text-black text-[3.5rem] font-bebas">
