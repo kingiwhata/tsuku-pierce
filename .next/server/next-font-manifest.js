@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST='{"pages":{},"app":{"/home/nevada/tsuku-pierce/src/app/layout":["static/media/86667d917ceb322f-s.p.woff2","static/media/a6f8c6b7131e657a-s.p.woff2","static/media/d8587557c8677295-s.p.woff2"],"/home/nevada/tsuku-pierce/src/app/page":["static/media/d8587557c8677295-s.p.woff2"]},"appUsingSizeAdjust":true,"pagesUsingSizeAdjust":false}';

@@ -1,9 +1,13 @@
 'use server';
-export async function registerUser(state: any, formData: FormData) {
-    if (await checkEmail(formData.get('user')!.toString())) return;
+
+import { permanentRedirect, redirect } from 'next/navigation';
+import { NextResponse } from 'next/server';
+
+export async function registerUser(formData: FormData) {
+    console.log(formData);
     try {
         const res = await fetch(
-            `${process.env.MEDUSA_BASE_URL}/store/customers`,
+            `${process.env.MEDUSA_BASE_URL}/store/register`,
             {
                 method: 'POST',
                 credentials: 'include',
@@ -11,22 +15,15 @@ export async function registerUser(state: any, formData: FormData) {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    email: 'nkwblak@gmail.com',
-                    password: '123',
-                    first_name: 'nev',
-                    last_name: 'bob',
+                    email: formData.get('email'),
+                    password: formData.get('password'),
+                    first_name: formData.get('first-name'),
+                    last_name: formData.get('last-name'),
                 }),
-                //                body: JSON.stringify({
-                //                    email: formData.get('user'),
-                //                    password: formData.get('password'),
-                //                    first_name: 'nev',
-                //                    last_name: 'bob',
-                //                }),
             },
         );
         if (res.ok) {
             const { customer } = await res.json();
-            console.log(customer);
             return customer;
         }
     } catch (error) {
@@ -88,4 +85,24 @@ export async function checkEmail(email: string) {
     } catch (error) {
         console.error(`${error}: Email already registered.`);
     }
+}
+
+export async function sendEmailToken(authToken: string) {
+    console.log(authToken);
+    try {
+        const res = await fetch(`${process.env.MEDUSA_BASE_URL}/store/verify`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                auth: authToken,
+            }),
+        });
+        if (res.ok) {
+            console.log('WOOOOOOOOOOOOOOOOOOOORK BEEEEEEEEEETCH');
+            return NextResponse.redirect('/account');
+        }
+    } catch (error) {}
 }

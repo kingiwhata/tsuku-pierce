@@ -1,0 +1,58 @@
+{
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-57cdef8df8ee8d19.js",
+      "static/chunks/b04e651b-dbe4c79c4da1ef1a.js",
+      "static/chunks/637-de4b3593893833a1.js",
+      "static/chunks/main-app-73ce7b6458152b90.js",
+      "static/chunks/app/_not-found/page-e055f11c50ceba3d.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-57cdef8df8ee8d19.js",
+      "static/chunks/b04e651b-dbe4c79c4da1ef1a.js",
+      "static/chunks/637-de4b3593893833a1.js",
+      "static/chunks/main-app-73ce7b6458152b90.js",
+      "static/css/a727ad6430b9f4aa.css",
+      "static/chunks/245-c34f75845fe075e1.js",
+      "static/chunks/app/layout-829f8cfd2af6eb34.js"
+    ],
+    "/account/page": [
+      "static/chunks/webpack-57cdef8df8ee8d19.js",
+      "static/chunks/b04e651b-dbe4c79c4da1ef1a.js",
+      "static/chunks/637-de4b3593893833a1.js",
+      "static/chunks/main-app-73ce7b6458152b90.js",
+      "static/chunks/app/account/page-7b0c4638ec2d6b7b.js"
+    ],
+    "/checkout/page": [
+      "static/chunks/webpack-57cdef8df8ee8d19.js",
+      "static/chunks/b04e651b-dbe4c79c4da1ef1a.js",
+      "static/chunks/637-de4b3593893833a1.js",
+      "static/chunks/main-app-73ce7b6458152b90.js",
+      "static/chunks/app/checkout/page-7422137900bcb65b.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-57cdef8df8ee8d19.js",
+      "static/chunks/b04e651b-dbe4c79c4da1ef1a.js",
+      "static/chunks/637-de4b3593893833a1.js",
+      "static/chunks/main-app-73ce7b6458152b90.js",
+      "static/css/a727ad6430b9f4aa.css",
+      "static/chunks/245-c34f75845fe075e1.js",
+      "static/chunks/app/page-067ad546841429bc.js"
+    ],
+    "/shop/page": [
+      "static/chunks/webpack-57cdef8df8ee8d19.js",
+      "static/chunks/b04e651b-dbe4c79c4da1ef1a.js",
+      "static/chunks/637-de4b3593893833a1.js",
+      "static/chunks/main-app-73ce7b6458152b90.js",
+      "static/chunks/245-c34f75845fe075e1.js",
+      "static/chunks/app/shop/page-a449a44c34c61521.js"
+    ],
+    "/shop/[product]/page": [
+      "static/chunks/webpack-57cdef8df8ee8d19.js",
+      "static/chunks/b04e651b-dbe4c79c4da1ef1a.js",
+      "static/chunks/637-de4b3593893833a1.js",
+      "static/chunks/main-app-73ce7b6458152b90.js",
+      "static/chunks/app/shop/[product]/page-f8c223dcc8f88729.js"
+    ]
+  }
+}

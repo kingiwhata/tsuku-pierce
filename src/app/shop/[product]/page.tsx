@@ -1,4 +1,5 @@
 import { getAllProducts } from '../../../utils/products';
+import { useProducts } from 'medusa-react';
 
 interface Product {
     title: string;
@@ -27,12 +28,13 @@ interface VariantData {
 
 const products = async () => await getAllProducts();
 
-export async function generateStaticParams() {
-    const res: Array<Product> = await products();
-    return res.map((product: Product) => ({
-        product: product.title.split(' ').join('-').toLowerCase(),
-    }));
-}
+//export async function generateStaticParams() {
+//    const res: Array<Product> = await products();
+//    console.log(res);
+//    return res.map((product: Product) => ({
+//        product: product.title.split(' ').join('-').toLowerCase(),
+//    }));
+//}
 
 export default async function Page({
     params,
@@ -44,7 +46,7 @@ export default async function Page({
         .join(' ')
         .replace(/(^\w|\s\w)/g, (m) => m.toUpperCase());
     const allProducts = await products();
-
+    console.log(allProducts);
     const product: Product = allProducts.find(
         (p: { title: string }) => p.title === title,
     );
