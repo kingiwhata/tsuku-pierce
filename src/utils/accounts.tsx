@@ -1,13 +1,12 @@
 'use server';
 
-import { permanentRedirect, redirect } from 'next/navigation';
+import { redirect } from 'next/navigation';
 import { NextResponse } from 'next/server';
 
-export async function registerUser(formData: FormData) {
-    console.log(formData);
+export async function registerUser(prevState: any, formData: FormData) {
     try {
         const res = await fetch(
-            `${process.env.MEDUSA_BASE_URL}/store/register`,
+            `${process.env.MEDUSA_BASE_URL}/store/customers`,
             {
                 method: 'POST',
                 credentials: 'include',
@@ -22,13 +21,15 @@ export async function registerUser(formData: FormData) {
                 }),
             },
         );
-        if (res.ok) {
-            const { customer } = await res.json();
-            return customer;
+        if (!res.ok) {
+            throw Error();
         }
     } catch (error) {
-        console.error(`${error}: Couldn't create account.`);
+        return {
+            res: 'Account could not be created.',
+        };
     }
+    redirect('/account/login');
 }
 
 export async function loginUser() {
@@ -45,9 +46,8 @@ export async function loginUser() {
             }),
         });
 
-        if (res.ok) {
-            const { customer } = await res.json();
-            return customer;
+        if (!res.ok) {
+            throw Error();
         }
     } catch (error) {
         console.error(`${error}: Couldn't create account.`);
@@ -61,9 +61,8 @@ export async function logoutUser() {
             credentials: 'include',
         });
 
-        if (res.ok) {
-            const { customer } = await res.json();
-            return customer;
+        if (!res.ok) {
+            throw Error();
         }
     } catch (error) {
         console.error(`${error}: Couldn't create account.`);
@@ -101,7 +100,6 @@ export async function sendEmailToken(authToken: string) {
             }),
         });
         if (res.ok) {
-            console.log('WOOOOOOOOOOOOOOOOOOOORK BEEEEEEEEEETCH');
             return NextResponse.redirect('/account');
         }
     } catch (error) {}

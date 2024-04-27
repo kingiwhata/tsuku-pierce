@@ -5,7 +5,7 @@ export function Nav() {
         <nav className="w-full absolute z-50 header px-24 py-5">
             <ul>
                 <li>
-                    <Link href="/account">
+                    <Link href="/account/register">
                         <img className="h-8 w-8" src="/pierce-acc.svg" />
                     </Link>
                 </li>

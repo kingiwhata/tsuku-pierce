@@ -54,8 +54,7 @@ h1 {
 }
 
 input {
-    color: black;
-    background: green;
+    color: black !important;
 }
 
 #logo-temp {
