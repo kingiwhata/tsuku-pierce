@@ -1,4 +1,5 @@
 'use server';
+
 export async function getAllProducts() {
     const url = process.env.MEDUSA_BASE_URL;
     try {

@@ -1,11 +1,12 @@
 import Link from 'next/link';
+import React from 'react';
 
 export function Nav() {
     return (
         <nav className="w-full absolute z-50 header px-24 py-5">
             <ul>
                 <li>
-                    <Link href="/account/register">
+                    <Link href="/account">
                         <img className="h-8 w-8" src="/pierce-acc.svg" />
                     </Link>
                 </li>
