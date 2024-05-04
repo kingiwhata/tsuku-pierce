@@ -1,5 +1,4 @@
 import { getAllProducts } from '../../../utils/products';
-import { useProducts } from 'medusa-react';
 
 interface Product {
     title: string;

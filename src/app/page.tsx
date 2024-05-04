@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { rockSalt, bebasNeue } from './fonts';
-import { Products } from '../components/front-shop';
+import { Products } from './components/front-shop';
 import Link from 'next/link';
 
 function App() {

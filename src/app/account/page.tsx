@@ -1,6 +1,7 @@
 'use client';
 import { useMeCustomer } from 'medusa-react';
 import React from 'react';
+import { logoutUser } from '../../utils/accounts';
 
 export default function Page() {
     const { customer, isLoading } = useMeCustomer();
@@ -10,6 +11,9 @@ export default function Page() {
                 {customer?.first_name} {customer?.last_name}
             </div>
             <div>{customer?.email}</div>
+            <div>
+                <button onClick={() => logoutUser()}>Log Out</button>
+            </div>
         </div>
     );
 }

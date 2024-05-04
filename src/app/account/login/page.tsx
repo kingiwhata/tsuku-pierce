@@ -7,7 +7,7 @@ export default function Page() {
     const router = useRouter();
     const [loginData, setLoginData] = useState({
         email: 'nkwblak@gmail.com',
-        password: process.env.MEDUSA_TEST_PW,
+        password: '12345',
     });
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setLoginData({

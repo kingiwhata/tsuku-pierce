@@ -1,11 +1,33 @@
 'use client';
-import { useProducts } from 'medusa-react';
+import { getAllProducts } from '../../utils/products';
 
 import { Filters } from './components/filterboxes';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+
+interface Product {
+    title: string;
+    description: string;
+    thumbnail: string;
+    images: Array<{
+        url: string;
+    }>;
+    options: Array<{
+        values: Array<{
+            value: string;
+        }>;
+    }>;
+}
+
 export default function Page() {
-    const { products, isLoading } = useProducts({ limit: 20 });
+    const [products, setProducts] = useState<Product[] | undefined>(undefined);
+    const getProducts = async () => {
+        const products: Product[] = await getAllProducts();
+        setProducts(products);
+    };
+    useEffect(() => {
+        getProducts();
+    }, []);
 
     const [showGauge, setShowGauge] = useState(true);
     const [showColour, setShowColour] = useState(false);
