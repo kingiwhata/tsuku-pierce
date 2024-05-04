@@ -32,8 +32,9 @@ export async function registerUser(prevState: any, formData: FormData) {
     redirect('/account/login');
 }
 
-export async function loginUser() {
+export async function loginUser(prevState: any, formData: FormData) {
     try {
+        console.log(formData);
         const res = await fetch(`${process.env.MEDUSA_BASE_URL}/store/auth`, {
             method: 'POST',
             credentials: 'include',
@@ -41,16 +42,21 @@ export async function loginUser() {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                email: 'nkwblak@gmail.com',
-                password: 'test123',
+                email: formData.get('email'),
+                password: formData.get('password'),
             }),
+            cache: 'no-cache',
         });
 
         if (!res.ok) {
             throw Error();
         }
+        console.log(await res.json());
     } catch (error) {
-        console.error(`${error}: Couldn't create account.`);
+        console.error(`${error}: Couldn't login to account.`);
+        return {
+            res: "Couldn't login",
+        };
     }
 }
 
@@ -103,4 +109,8 @@ export async function sendEmailToken(authToken: string) {
             return NextResponse.redirect('/account');
         }
     } catch (error) {}
+}
+
+export async function navigateAccount() {
+    redirect('/account');
 }

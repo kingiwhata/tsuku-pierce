@@ -46,7 +46,6 @@ export default async function Page({
         .join(' ')
         .replace(/(^\w|\s\w)/g, (m) => m.toUpperCase());
     const allProducts = await products();
-    console.log(allProducts);
     const product: Product = allProducts.find(
         (p: { title: string }) => p.title === title,
     );
