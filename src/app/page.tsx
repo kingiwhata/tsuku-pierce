@@ -85,7 +85,7 @@ function App() {
             </section>
 
             <section id="about-section">
-                <div className="who-we">
+                <div className="who-we ">
                     <p>WHO WE ARE</p>
                 </div>
                 <div className="py-24 px-60">
@@ -120,7 +120,7 @@ function App() {
                 </div>
             </section>
             <section id="shop-section" className="bg-[#00FFE1]">
-                <div className="who-we text-[31rem]">
+                <div className="who-we text-[31rem] ">
                     <p>SHOP WITH US</p>
                 </div>
                 <div id="shop-div" className="py-24 px-60 flex flex-col gap-8">
@@ -140,7 +140,7 @@ function App() {
                     </div>
                     <p className="text-[2rem] font-bebas text-black mb-3">
                         <Link href="/shop">
-                            <button className="border-black bg-white py-1 px-3 rounded">
+                            <button className="border-black bg-white py-1 px-3 rounded z-10">
                                 See More
                             </button>
                         </Link>
@@ -164,7 +164,7 @@ function App() {
                 </div>
             </section>
             <section id="insta-section">
-                <div className="who-we">
+                <div className="who-we -z-[1]">
                     <p>FOLLOW US</p>
                 </div>
                 <div className="py-24 px-60">

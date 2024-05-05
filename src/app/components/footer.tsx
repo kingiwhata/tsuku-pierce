@@ -1,3 +1,4 @@
+import React from 'react';
 export function Footer() {
     return (
         <>
@@ -13,7 +14,7 @@ export function Footer() {
                                 <p>Hamburger</p>
                             </div>
                         </div>
-                        <div className="flex flex-col gap-2 w-1/3">
+                        <div className="flex flex-row gap-2 w-1/3">
                             <div className="flex flex-col gap-2 w-1/2">
                                 <div className="w-100 text-left">
                                     <h2>Sort By Gauge</h2>
