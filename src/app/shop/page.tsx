@@ -5,6 +5,8 @@ import { Filters } from './components/filterboxes';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
+import React from 'react';
+
 interface Product {
     title: string;
     description: string;
@@ -23,6 +25,7 @@ export default function Page() {
     const [products, setProducts] = useState<Product[] | undefined>(undefined);
     const getProducts = async () => {
         const products: Product[] = await getAllProducts();
+        console.log(products);
         setProducts(products);
     };
     useEffect(() => {

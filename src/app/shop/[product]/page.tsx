@@ -1,4 +1,7 @@
+import { cookies } from 'next/headers';
+import { addToCart } from '../../../utils/cart';
 import { getAllProducts } from '../../../utils/products';
+import React from 'react';
 
 interface Product {
     title: string;
@@ -23,6 +26,7 @@ interface VariantData {
         amount: number;
         currency_code: string;
     }>;
+    id: string;
 }
 
 const products = async () => await getAllProducts();
@@ -51,6 +55,9 @@ export default async function Page({
     const productColours = Array.from(
         new Set(product.options[1]?.values.map((x) => x.value)),
     );
+
+    const addToCartId = addToCart.bind(null, product.variants[0].id, 1);
+    console.log(product);
 
     return (
         <section className="text-black h-screen font-bebas">
@@ -90,10 +97,11 @@ export default async function Page({
                         >
                             <option value="">1</option>
                         </select>
-                        <button className="w-2/4 bg-gray-500">
-                            Add To Cart
-                        </button>
-
+                        <form action={addToCartId}>
+                            <button className="w-2/4 bg-gray-500" type="submit">
+                                Add To Cart
+                            </button>
+                        </form>
                         <button className="w-1/4 bg-gray-500">Favourite</button>
                     </div>
                     <div>

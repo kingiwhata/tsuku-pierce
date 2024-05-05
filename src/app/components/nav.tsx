@@ -11,7 +11,7 @@ export function Nav() {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/checkout">
+                    <Link href="/cart">
                         <img className="h-8 w-8" src="/pierce-cart.svg" />
                     </Link>
                 </li>
