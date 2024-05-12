@@ -138,7 +138,7 @@ export default function Page() {
                             Sort By
                         </div>
                         <div className="items-start flex flex-row flex-wrap gap-4 bg-white">
-                            {products?.map((product, i) => (
+                            {products?.map((product: Product, i: number) => (
                                 <Link
                                     key={i}
                                     className="w-[calc(20%-0.8rem)]"
@@ -164,7 +164,7 @@ export default function Page() {
                                     </div>
                                 </Link>
                             ))}
-                            {products?.map((product, i) => (
+                            {products?.map((product: Product, i: number) => (
                                 <Link
                                     key={i}
                                     className="w-[calc(20%-0.8rem)]"

@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Metadata } from 'next';
 import { bebasNeue, inconsolata } from './fonts';
 import { Footer } from './components/footer';

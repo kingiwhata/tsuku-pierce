@@ -1,7 +1,5 @@
-import { cookies } from 'next/headers';
 import { addToCart } from '../../../utils/cart';
 import { getAllProducts } from '../../../utils/products';
-import React from 'react';
 
 interface Product {
     title: string;
@@ -57,7 +55,6 @@ export default async function Page({
     );
 
     const addToCartId = addToCart.bind(null, product.variants[0].id, 1);
-    console.log(product);
 
     return (
         <section className="text-black h-screen font-bebas">
@@ -86,7 +83,7 @@ export default async function Page({
                     <div className="text-2xl ">Colour</div>
                     <div className="flex flex-row gap-4">
                         {productColours.map((colour: string, i: number) => (
-                            <div>{colour}</div>
+                            <div key={i}>{colour}</div>
                         ))}
                     </div>
                     <div className="flex flex-row gap-4 h-12">

@@ -1,7 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { getProductsLimit } from '../../utils/products';
-import React from 'react';
 import Link from 'next/link';
 
 interface Product {
@@ -29,7 +28,7 @@ export function Products({ limit }: { limit: number }) {
     }, []);
     return (
         <>
-            {products?.map((product: any, i: any) => (
+            {products?.map((product: Product, i: number) => (
                 <div
                     key={i}
                     className="shop-card z-50 transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 duration-200 cursor-pointer"

@@ -1,4 +1,3 @@
-import React from 'react';
 import { getCart } from '../../utils/cart';
 import Link from 'next/link';
 
