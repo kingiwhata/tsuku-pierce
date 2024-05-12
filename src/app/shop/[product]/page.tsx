@@ -77,7 +77,7 @@ export default async function Page({
                     <img className="h-full" src={product.thumbnail} alt="" />
                 </div>
                 <div className="gap-4 w-2/5 flex flex-col text-left p-8">
-                    <div className="text-2xl text-black">{product.title}</div>
+                    <div className="text-4xl text-black">{product.title}</div>
                     <div className="text-2xl text-black">$20</div>
                     <div>
                         <div className="text-2xl ">Description</div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { getCart } from '../../utils/cart';
+import Link from 'next/link';
 
 interface CartType {
     items: Array<{
@@ -20,6 +21,9 @@ export default async function Page() {
                         <img className="h-64 w-64" src={item.thumbnail} />
                     ))}
                 </div>
+                <Link href="/checkout">
+                    <button className="text-black">Checkout</button>
+                </Link>
             </div>
         </section>
     );

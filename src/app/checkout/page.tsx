@@ -1,3 +1,47 @@
+'use client';
+import { useState, useEffect } from 'react';
+import { Elements } from '@stripe/react-stripe-js';
+import PaymentForm from './components/PaymentForm';
+import { loadStripe } from '@stripe/stripe-js';
+import { createPaymentSession, setPaymentSession } from '../../utils/checkout';
+
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY || '');
+console.log(process.env.NEXT_PUBLIC_STRIPE_KEY);
+
 export default function Page() {
-    return <h1>What Up</h1>
+    const [clientSecret, setClientSecret] = useState();
+    const getSession = async () => {
+        const cart = await createPaymentSession();
+        const isStripe = cart.payment_sessions?.some(
+            (session: any) => session.provider_id === 'stripe',
+        );
+        console.log(cart);
+        if (!isStripe) return;
+
+        const setSesh = await setPaymentSession();
+        if (!setSesh) return;
+        console.log(setSesh, cart);
+        console.log(setSesh.payment_session.data.client_secret);
+        setClientSecret(setSesh.payment_session.data.client_secret);
+    };
+    useEffect(() => {
+        getSession();
+    }, []);
+
+    return (
+        <section className="flex w-screen h-screen">
+            <div className="py-24 px-62 w-full h-full">
+                {clientSecret && (
+                    <Elements
+                        stripe={stripePromise}
+                        options={{
+                            clientSecret,
+                        }}
+                    >
+                        <PaymentForm clientSecret={clientSecret} cartId={''} />
+                    </Elements>
+                )}
+            </div>
+        </section>
+    );
 }

@@ -1,7 +1,6 @@
 'use client';
-import React from 'react';
 import { useEffect, useState } from 'react';
-import { rockSalt, bebasNeue } from './fonts';
+import { rockSalt } from './fonts';
 import { Products } from './components/front-shop';
 import Link from 'next/link';
 
@@ -46,10 +45,8 @@ function App() {
         );
         const aboutElement = document.querySelector('#about-div');
         const shopElement = document.querySelector('#shop-div');
-        //@ts-expect-error f u bish
-        observer.observe(shopElement);
-        //@ts-expect-error f u bish
-        observer.observe(aboutElement);
+        observer.observe(shopElement!);
+        observer.observe(aboutElement!);
     });
     return (
         <>
