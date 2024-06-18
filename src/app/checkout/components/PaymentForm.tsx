@@ -1,5 +1,12 @@
 'use client';
-import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
+import {
+    AddressElement,
+    PaymentElement,
+    PaymentRequestButtonElement,
+    useElements,
+    useStripe,
+} from '@stripe/react-stripe-js';
+import { completeCart, updateCart } from '../../../utils/cart';
 
 export default function PaymentForm({ clientSecret, cartId }) {
     const stripe = useStripe();
@@ -7,19 +14,35 @@ export default function PaymentForm({ clientSecret, cartId }) {
 
     async function handlePayment(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        console.log(clientSecret);
-        const res = await stripe?.confirmCardPayment(clientSecret, {
-            payment_method: {
-                card: elements?.getElement(CardElement)!,
-            },
+        if (!stripe) return;
+
+        const { error: submitError } = await elements!.submit();
+        if (submitError) return;
+
+        console.log('SENMD EDSCDAS');
+        let addy = elements?.getElement('address');
+        const x = await addy!.getValue();
+        if (x.complete) {
+            await updateCart(x.value);
+            console.log(x.value);
+        }
+        await completeCart();
+        const res = await stripe.confirmPayment({
+            elements,
+            redirect: 'if_required',
         });
-        console.log(res);
+
+        if (!res) return;
+        await completeCart();
     }
 
     return (
         <form onSubmit={handlePayment}>
-            <CardElement />
-            <button type="submit"> Submit</button>
+            <PaymentElement />
+            <AddressElement options={{ mode: 'shipping' }} />
+            <button type="submit" disabled={!stripe}>
+                Submit Payment
+            </button>
         </form>
     );
 }

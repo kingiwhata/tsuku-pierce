@@ -6,7 +6,6 @@ import { loadStripe } from '@stripe/stripe-js';
 import { createPaymentSession, setPaymentSession } from '../../utils/checkout';
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY || '');
-console.log(process.env.NEXT_PUBLIC_STRIPE_KEY);
 
 export default function Page() {
     const [clientSecret, setClientSecret] = useState();
@@ -21,7 +20,6 @@ export default function Page() {
         const setSesh = await setPaymentSession();
         if (!setSesh) return;
         console.log(setSesh, cart);
-        console.log(setSesh.payment_session.data.client_secret);
         setClientSecret(setSesh.payment_session.data.client_secret);
     };
     useEffect(() => {
@@ -29,8 +27,8 @@ export default function Page() {
     }, []);
 
     return (
-        <section className="flex w-screen h-screen">
-            <div className="py-24 px-62 w-full h-full">
+        <section className="flex w-screen ">
+            <div className="py-24 px-60 w-full ">
                 {clientSecret && (
                     <Elements
                         stripe={stripePromise}

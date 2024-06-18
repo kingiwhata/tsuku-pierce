@@ -90,7 +90,7 @@ function App() {
                         id="about-div"
                         className="flex flex-col items-center h-full justify-center gap-8"
                     >
-                        <div id="about-text">
+                        <div className="w-1/2 text-black">
                             <div className="text-[3rem]  mb-4 w-full">
                                 <h2>
                                     Body piercings that give voice to how you

@@ -88,3 +88,66 @@ export async function getCart() {
         };
     }
 }
+
+export async function updateCart(addyObj: any) {
+    try {
+        const res = await fetch(
+            `${process.env.MEDUSA_BASE_URL}/store/carts/${cookies().get('cart-id')?.value}`,
+            {
+                method: 'POST',
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Cookie: `connect.sid=${cookies().get('medusa.sid')?.value}`,
+                },
+                cache: 'no-store',
+                body: JSON.stringify({
+                    shipping_address: {
+                        address_1: addyObj.line1,
+                        city: addyObj.city,
+                        postal_code: addyObj.postal_code,
+                    },
+                }),
+            },
+        );
+        if (!res.ok) {
+            console.error(res);
+            throw Error();
+        }
+        const { cart } = await res.json();
+        revalidatePath('/cart');
+        return cart;
+    } catch (error) {
+        return {
+            res: `Account could not be created.`,
+        };
+    }
+}
+
+export async function completeCart() {
+    try {
+        const res = await fetch(
+            `${process.env.MEDUSA_BASE_URL}/store/carts/${cookies().get('cart-id')?.value}/complete`,
+            {
+                method: 'POST',
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Cookie: `connect.sid=${cookies().get('medusa.sid')?.value}`,
+                },
+                cache: 'no-store',
+            },
+        );
+        if (!res.ok) {
+            console.error(res);
+            throw Error();
+        }
+        const { cart } = await res.json();
+        revalidatePath('/cart');
+        return cart;
+    } catch (error) {
+        return {
+            res: `Account could not be created.`,
+        };
+    }
+}

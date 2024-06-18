@@ -53,11 +53,6 @@ body {
     justify-content: center;
 }
 
-#about-img {
-    height: 25rem;
-    width: 25rem;
-}
-
 #img-text-about-div {
     display: flex;
     flex-direction: column;
@@ -80,11 +75,6 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-}
-
-#about-text {
-    width: 50%;
-    color: black;
 }
 
 #hero-section {
