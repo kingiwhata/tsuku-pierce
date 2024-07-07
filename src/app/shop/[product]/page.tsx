@@ -1,31 +1,6 @@
 import { addToCart } from '../../../utils/cart';
 import { getAllProducts } from '../../../utils/products';
-
-interface Product {
-    title: string;
-    description: string;
-    thumbnail: string;
-    images: Array<{
-        url: string;
-    }>;
-    options: Array<{
-        values: Array<{
-            value: string;
-        }>;
-    }>;
-    variants: Array<VariantData>;
-}
-
-interface VariantData {
-    options: Array<{
-        value: string;
-    }>;
-    prices: Array<{
-        amount: number;
-        currency_code: string;
-    }>;
-    id: string;
-}
+import { Product } from '../../types/Product';
 
 const products = async () => await getAllProducts();
 

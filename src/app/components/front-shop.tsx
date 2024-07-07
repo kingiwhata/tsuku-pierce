@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { getProductsLimit } from '../../utils/products';
-import { Product } from '../types';
+import { Product } from '../types/Product.ts';
 import Link from 'next/link';
 
 export function Products({ limit }: { limit: number }) {

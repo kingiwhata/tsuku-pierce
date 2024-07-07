@@ -1,5 +1,4 @@
 'use server';
-
 import { cookies } from 'next/headers';
 
 export async function createPaymentSession() {
@@ -19,8 +18,6 @@ export async function createPaymentSession() {
             throw Error();
         }
         const { cart } = await res.json();
-        console.log(cart.payment_sessions);
-
         return cart;
     } catch (error) {
         return {
@@ -47,7 +44,6 @@ export async function setPaymentSession() {
             throw Error();
         }
         const { cart } = await res.json();
-        console.log(cart);
         return cart;
     } catch (error) {
         return {
