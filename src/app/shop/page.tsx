@@ -1,23 +1,9 @@
 'use client';
 import { getAllProducts } from '../../utils/products';
-
+import { Product } from '../types';
 import { Filters } from './components/filterboxes';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-
-interface Product {
-    title: string;
-    description: string;
-    thumbnail: string;
-    images: Array<{
-        url: string;
-    }>;
-    options: Array<{
-        values: Array<{
-            value: string;
-        }>;
-    }>;
-}
 
 export default function Page() {
     const [products, setProducts] = useState<Product[] | undefined>(undefined);

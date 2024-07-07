@@ -1,21 +1,8 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { getProductsLimit } from '../../utils/products';
+import { Product } from '../types';
 import Link from 'next/link';
-
-interface Product {
-    title: string;
-    description: string;
-    thumbnail: string;
-    images: Array<{
-        url: string;
-    }>;
-    options: Array<{
-        values: Array<{
-            value: string;
-        }>;
-    }>;
-}
 
 export function Products({ limit }: { limit: number }) {
     const [products, setProducts] = useState<Product[] | undefined>(undefined);

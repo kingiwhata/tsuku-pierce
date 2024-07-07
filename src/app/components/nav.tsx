@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export function Nav() {
@@ -6,18 +7,33 @@ export function Nav() {
             <ul>
                 <li>
                     <Link href="/account">
-                        <img className="h-8 w-8" src="/pierce-acc.svg" />
+                        <Image
+                            height={32}
+                            width={32}
+                            src="/pierce-acc.svg"
+                            alt="Image of an account icon"
+                        />
                     </Link>
                 </li>
                 <li>
                     <Link href="/cart">
-                        <img className="h-8 w-8" src="/pierce-cart.svg" />
+                        <Image
+                            height={32}
+                            width={32}
+                            src="/pierce-cart.svg"
+                            alt="Image of a cart icon"
+                        />
                     </Link>
                 </li>
                 <li>
-                    <img className="h-8 w-8" src="/pierce-search.svg" />
+                    <Image
+                        height={32}
+                        width={32}
+                        src="/pierce-search.svg"
+                        alt="Image of a search icon"
+                    />
                 </li>
-                <li className="justify-start ml-auto">
+                <li className="ml-auto">
                     <Link href="/">
                         <p id="logo-temp">Proud to Pierce</p>
                     </Link>

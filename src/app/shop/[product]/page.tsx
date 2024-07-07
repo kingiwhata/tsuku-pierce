@@ -29,14 +29,6 @@ interface VariantData {
 
 const products = async () => await getAllProducts();
 
-//export async function generateStaticParams() {
-//    const res: Array<Product> = await products();
-//    console.log(res);
-//    return res.map((product: Product) => ({
-//        product: product.title.split(' ').join('-').toLowerCase(),
-//    }));
-//}
-
 export default async function Page({
     params,
 }: {

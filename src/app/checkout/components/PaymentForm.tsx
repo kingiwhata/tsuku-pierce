@@ -2,7 +2,6 @@
 import {
     AddressElement,
     PaymentElement,
-    PaymentRequestButtonElement,
     useElements,
     useStripe,
 } from '@stripe/react-stripe-js';
@@ -19,12 +18,10 @@ export default function PaymentForm({ clientSecret, cartId }) {
         const { error: submitError } = await elements!.submit();
         if (submitError) return;
 
-        console.log('SENMD EDSCDAS');
         let addy = elements?.getElement('address');
         const x = await addy!.getValue();
         if (x.complete) {
             await updateCart(x.value);
-            console.log(x.value);
         }
         await completeCart();
         const res = await stripe.confirmPayment({

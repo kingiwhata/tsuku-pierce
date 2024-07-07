@@ -14,12 +14,10 @@ export default function Page() {
         const isStripe = cart.payment_sessions?.some(
             (session: any) => session.provider_id === 'stripe',
         );
-        console.log(cart);
         if (!isStripe) return;
 
         const setSesh = await setPaymentSession();
         if (!setSesh) return;
-        console.log(setSesh, cart);
         setClientSecret(setSesh.payment_session.data.client_secret);
     };
     useEffect(() => {
