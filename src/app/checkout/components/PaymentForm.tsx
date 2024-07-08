@@ -7,7 +7,7 @@ import {
 } from '@stripe/react-stripe-js';
 import { completeCart, updateCart } from '../../../utils/cart';
 
-export default function PaymentForm({ clientSecret, cartId }) {
+export default function PaymentForm() {
     const stripe = useStripe();
     const elements = useElements();
 
@@ -18,12 +18,12 @@ export default function PaymentForm({ clientSecret, cartId }) {
         const { error: submitError } = await elements!.submit();
         if (submitError) return;
 
-        let addy = elements?.getElement('address');
-        const x = await addy!.getValue();
-        if (x.complete) {
-            await updateCart(x.value);
+        let addressElement = elements?.getElement('address');
+        const address = await addressElement!.getValue();
+        if (address.complete) {
+            await updateCart(address.value);
         }
-        await completeCart();
+        if (!elements) return;
         const res = await stripe.confirmPayment({
             elements,
             redirect: 'if_required',
