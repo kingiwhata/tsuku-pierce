@@ -54,11 +54,7 @@ export default async function Page({
                         ))}
                     </div>
                     <div className="flex flex-row gap-4 h-12">
-                        <select
-                            className="w-1/4 bg-gray-500 p-3"
-                            name="item"
-                            id=""
-                        >
+                        <select className="w-1/4 bg-gray-500 p-3" name="item">
                             <option value="">1</option>
                         </select>
                         <form action={addToCartId}>

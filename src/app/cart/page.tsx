@@ -1,16 +1,9 @@
+import { Cart } from '@medusajs/medusa';
 import { getCart } from '../../utils/cart';
 import Link from 'next/link';
 
-interface CartType {
-    items: Array<{
-        title: string;
-        thumbnail: string;
-        quantity: number;
-    }>;
-}
-
 export default async function Page() {
-    const cart: CartType = await getCart();
+    const cart: Cart = await getCart();
     return (
         <section className="flex w-screen h-screen">
             <div className="py-24 px-60 w-full h-full flex content-center">

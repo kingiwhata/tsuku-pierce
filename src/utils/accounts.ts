@@ -1,11 +1,9 @@
 'use server';
-
 import { redirect } from 'next/navigation';
 import { NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
-import { revalidatePath } from 'next/cache';
 
-export async function registerUser(prevState: any, formData: FormData) {
+export async function registerUser(formData: FormData) {
     try {
         const res = await fetch(
             `${process.env.MEDUSA_BASE_URL}/store/customers`,
@@ -34,7 +32,7 @@ export async function registerUser(prevState: any, formData: FormData) {
     redirect('/account/login');
 }
 
-export async function loginUser(prevState: any, formData: FormData) {
+export async function loginUser(formData: FormData) {
     try {
         const res = await fetch(`${process.env.MEDUSA_BASE_URL}/store/auth`, {
             method: 'POST',
@@ -67,7 +65,6 @@ export async function loginUser(prevState: any, formData: FormData) {
             res: "Couldn't login",
         };
     }
-
     redirect('/account');
 }
 

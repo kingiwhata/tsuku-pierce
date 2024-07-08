@@ -1,6 +1,6 @@
 'use client';
 import { getAllProducts } from '../../utils/products';
-import { Product } from '../types';
+import { Product } from '../types/Product';
 import { Filters } from './components/filterboxes';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -33,7 +33,7 @@ export default function Page() {
                         >
                             Gauge
                         </div>
-                        {showGauge ? (
+                        {showGauge && (
                             <Filters
                                 items={[
                                     '16',
@@ -44,8 +44,6 @@ export default function Page() {
                                     'Needle',
                                 ]}
                             />
-                        ) : (
-                            <></>
                         )}
 
                         <div
@@ -55,7 +53,7 @@ export default function Page() {
                             Price
                         </div>
 
-                        {showPrice ? (
+                        {showPrice && (
                             <Filters
                                 items={[
                                     '$0 - $10',
@@ -64,8 +62,6 @@ export default function Page() {
                                     'Over $30',
                                 ]}
                             />
-                        ) : (
-                            <></>
                         )}
                         <div
                             className="pt-4 border-t-[1px] mx-6 text-left cursor-pointer"
@@ -74,10 +70,8 @@ export default function Page() {
                             Colour
                         </div>
 
-                        {showColour ? (
+                        {showColour && (
                             <Filters items={['Silver', 'Gold', 'Black']} />
-                        ) : (
-                            <></>
                         )}
                         <div
                             className="pt-4 border-t-[1px] mx-6 text-left cursor-pointer"
@@ -86,7 +80,7 @@ export default function Page() {
                             Style
                         </div>
 
-                        {showStyle ? (
+                        {showStyle && (
                             <Filters
                                 items={[
                                     'Straight Barbell',
@@ -96,8 +90,6 @@ export default function Page() {
                                     'Captive Ring',
                                 ]}
                             />
-                        ) : (
-                            <></>
                         )}
                         <div
                             className="pt-4 border-t-[1px] mx-6 text-left cursor-pointer"
@@ -106,7 +98,7 @@ export default function Page() {
                             Material
                         </div>
 
-                        {showMaterial ? (
+                        {showMaterial && (
                             <Filters
                                 items={[
                                     'Titanium',
@@ -115,8 +107,6 @@ export default function Page() {
                                     'Sterling Steel',
                                 ]}
                             />
-                        ) : (
-                            <></>
                         )}
                     </div>
                     <div className="w-4/5 ">
